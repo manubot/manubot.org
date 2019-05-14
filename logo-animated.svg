@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 192 1024 640">
+  <style>
+    .the_m {
+      stroke-dasharray: 948;
+      stroke-dashoffset: 948;
+      animation: draw_m 1s ease forwards;
+    }
+    .left_line,
+    .right_line {
+      stroke-dasharray: 32;
+      stroke-dashoffset: 32;
+      animation: draw_lines 1s ease forwards;
+    }
+    .left_circle,
+    .right_circle {
+      stroke-width: 0;
+      animation: draw_circles 1s ease forwards;
+    }
+    .left_bracket,
+    .right_bracket {
+      stroke-dasharray: 573;
+      animation: draw_brackets 1s ease forwards;
+    }
+    .left_bracket {
+      stroke-dashoffset: 573;
+    }
+    .right_bracket {
+      stroke-dashoffset: -573;
+    }
+    @keyframes draw_m {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes draw_brackets {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes draw_lines {
+      50% {
+        stroke-dashoffset: 32;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes draw_circles {
+      50% {
+        stroke-width: 0;
+      }
+      100% {
+        stroke-width: 32px;
+      }
+    }
+  </style>
+  <path
+    class="the_m"
+    fill="none"
+    stroke="#eeeeee"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="48"
+    d="M384 640V384l128 176 128-176v256"
+  />
+  <path
+    class="left_line"
+    fill="none"
+    stroke="#eeeeee"
+    stroke-linecap="round"
+    stroke-width="48"
+    d="M176 512h-32"
+  />
+  <circle
+    class="left_circle"
+    cx="56"
+    cy="512"
+    r="32"
+    fill="none"
+    stroke="#eeeeee"
+    stroke-width="32"
+  />
+  <path
+    class="left_bracket"
+    fill="none"
+    stroke="#eeeeee"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="48"
+    d="M304 256L176 512l128 256"
+  />
+  <path
+    class="right_line"
+    fill="none"
+    stroke="#eeeeee"
+    stroke-linecap="round"
+    stroke-width="48"
+    d="M848 512h32"
+  />
+  <circle
+    class="right_circle"
+    cx="968"
+    cy="512"
+    r="32"
+    fill="none"
+    stroke="#eeeeee"
+    stroke-width="32"
+  />
+  <path
+    class="right_bracket"
+    fill="none"
+    stroke="#eeeeee"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="48"
+    d="M720 256l128 256-128 256"
+  />
+</svg>
