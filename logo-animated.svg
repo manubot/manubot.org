@@ -57,7 +57,7 @@
   <path
     class="the_m"
     fill="none"
-    stroke="#eeeeee"
+    stroke="#ffffff"
     stroke-linecap="round"
     stroke-linejoin="round"
     stroke-width="48"
@@ -66,7 +66,7 @@
   <path
     class="left_line"
     fill="none"
-    stroke="#eeeeee"
+    stroke="#ffffff"
     stroke-linecap="round"
     stroke-width="48"
     d="M176 512h-32"
@@ -77,13 +77,13 @@
     cy="512"
     r="32"
     fill="none"
-    stroke="#eeeeee"
+    stroke="#ffffff"
     stroke-width="32"
   />
   <path
     class="left_bracket"
     fill="none"
-    stroke="#eeeeee"
+    stroke="#ffffff"
     stroke-linecap="round"
     stroke-linejoin="round"
     stroke-width="48"
@@ -92,7 +92,7 @@
   <path
     class="right_line"
     fill="none"
-    stroke="#eeeeee"
+    stroke="#ffffff"
     stroke-linecap="round"
     stroke-width="48"
     d="M848 512h32"
@@ -103,13 +103,13 @@
     cy="512"
     r="32"
     fill="none"
-    stroke="#eeeeee"
+    stroke="#ffffff"
     stroke-width="32"
   />
   <path
     class="right_bracket"
     fill="none"
-    stroke="#eeeeee"
+    stroke="#ffffff"
     stroke-linecap="round"
     stroke-linejoin="round"
     stroke-width="48"
