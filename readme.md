@@ -2,4 +2,6 @@
 
 ## Acknowledgements
 
-Cross-browser tested with [![BrowserStack](BrowserStack-logo.png?raw=true)](https://www.browserstack.com)
+Cross-browser tested with:
+
+<a href="https://www.browserstack.com"><img src="BrowserStack-logo.png?raw=true" style="height: 2em"/></a>
