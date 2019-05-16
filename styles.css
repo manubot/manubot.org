@@ -162,19 +162,15 @@ footer i {
   justify-content: center;
   align-items: center;
   width: 170px;
+  min-width: 170px;
   height: 50px;
   color: #ad1457;
   font-weight: 600;
+  margin: 5px;
   border: solid 2px #ad1457;
   border-radius: 4px;
   text-decoration: none;
   transition: background 0.1s ease, color 0.1s ease;
-}
-.button_link:not(:first-child) {
-  margin-right: 5px;
-}
-.button_link:not(:last-child) {
-  margin-left: 5px;
 }
 .button_link * {
   color: #ad1457;
