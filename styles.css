@@ -49,6 +49,16 @@ a {
 a:hover {
   color: #ad1457;
 }
+figure {
+  margin: 0 10px 10px 10px;
+  text-align: center;
+}
+figure img {
+  margin: 10px 0;
+}
+figcaption {
+  font-size: 0.85em;
+}
 code {
   background: rgba(0, 0, 0, 0.05);
   padding: 0 3px;
@@ -57,6 +67,9 @@ code {
 code,
 code * {
   font-family: 'Inconsolata', monospace;
+}
+.semibold {
+  font-weight: 600;
 }
 .logo_container {
   box-sizing: border-box;
@@ -206,9 +219,10 @@ code * {
 .workflow_row {
   align-items: flex-start;
 }
-.workflow_item {
-  margin: 5px;
+.workflow_figure {
   width: 150px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .workflow_image {
   width: 150px;
