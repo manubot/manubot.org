@@ -162,6 +162,10 @@ code * {
 .flex_wrap_reverse {
   flex-wrap: wrap-reverse;
 }
+.col_half {
+  box-sizing: border-box;
+  width: 50%;
+}
 .col_text {
   box-sizing: border-box;
   flex-grow: 1;
@@ -245,6 +249,9 @@ code * {
   padding: 20px;
 }
 @media (max-width: 720px) {
+  .col_half {
+    flex-basis: 100%;
+  }
   .col_text {
     flex-basis: 100%;
     padding: 20px 0 0 0 !important;
