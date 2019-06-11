@@ -21,7 +21,7 @@ header {
   box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.1);
 }
 header * {
-  color: #ffffff;
+  color: #fafafa;
 }
 section {
   padding: 20px;
@@ -38,7 +38,7 @@ footer {
 footer *,
 footer a,
 footer a:hover {
-  color: #ffffff;
+  color: #fafafa;
 }
 footer i {
   margin: 5px;
@@ -180,8 +180,11 @@ code * {
 }
 .col_image {
   width: 320px;
-  height: 260px;
-  background: rgba(0, 0, 0, 0.1);
+  height: 240px;
+}
+.col_image img {
+  width: 100%;
+  height: 100%;
 }
 .col_header {
   font-size: 20px;
@@ -242,7 +245,37 @@ code * {
   width: 150px;
   height: 150px;
   margin: 5px;
-  background: rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.example_image img,
+.example_image div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.example_image div {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 0.75em;
+  opacity: 0;
+  background: none;
+  pointer-events: none;
+  transition: opacity 0.1s ease, background 0.1s ease;
+}
+.example_image div * {
+  padding: 2px 5px;
+  color: #fafafa;
+}
+.example_image:hover div,
+.example_image:focus div {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.75);
 }
 .banner_box {
   background: #eeeeee;
