@@ -29,7 +29,10 @@ header a:hover {
 }
 section {
     position: relative;
-    padding: 20px;
+    padding: 30px 20px;
+}
+section:nth-child(odd) {
+    background: #f2f2f2;
 }
 footer {
     display: flex;
@@ -78,6 +81,7 @@ code * {
     font-weight: 600;
 }
 .emphasis {
+    padding: 20px;
     font-size: 1.15em;
 }
 .logo_container {
@@ -129,9 +133,6 @@ code * {
         opacity: 0.5;
     }
 }
-.special_section {
-    background: #f5f5f5;
-}
 .section_header {
     display: flex;
     justify-content: center;
@@ -148,7 +149,7 @@ code * {
     content: '';
     width: 100px;
     height: 2px;
-    margin: 0 10px;
+    margin: 0 20px;
     background: #424242;
     vertical-align: middle;
     opacity: 0.25;
@@ -202,6 +203,7 @@ code * {
     width: 170px;
     min-width: 170px;
     height: 50px;
+    background: #fafafa;
     color: #ad1457;
     font-weight: 600;
     margin: 5px;
