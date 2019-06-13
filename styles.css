@@ -77,6 +77,9 @@ code * {
 .semibold {
     font-weight: 600;
 }
+.emphasis {
+    font-size: 1.15em;
+}
 .logo_container {
     box-sizing: border-box;
     width: 200px;
