@@ -296,12 +296,14 @@ code * {
     opacity: 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     transition: opacity 1s ease;
+    z-index: 0;
 }
 .slideshow > *:first-child {
-    position: static;
+    position: relative;
 }
 .slideshow > *[data-active] {
     opacity: 1;
+    z-index: 1;
 }
 @media (max-width: 720px) {
     .col_text {
