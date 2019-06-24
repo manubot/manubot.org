@@ -1,0 +1,100 @@
+.catalog_entry {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+.catalog_entry_screenshot {
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  overflow: hidden;
+}
+.catalog_entry_image {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.catalog_entry_text {
+  box-sizing: border-box;
+  padding: 20px;
+  flex-grow: 1;
+  width: 100%;
+}
+.catalog_entry_text > * {
+  max-height: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.catalog_entry_text > *:not(:first-child) {
+  margin-top: 5px;
+}
+.catalog_entry_text > *:not(:last-child) {
+  margin-bottom: 5px;
+}
+.catalog_entry_title {
+  font-weight: bold;
+}
+.catalog_entry_links {
+  display: flex;
+  width: 240px;
+  height: 100%;
+  flex-direction: column;
+  border-left: solid 1px #e0e0e0;
+}
+.catalog_entry_links a {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  color: #424242;
+  text-decoration: none;
+}
+.catalog_entry_links a span {
+  flex-grow: 1;
+}
+.catalog_entry_links a i {
+  margin-left: 20px;
+}
+.catalog_entry_links a:hover {
+  background: #ad1457;
+}
+.catalog_entry_links a:hover span,
+.catalog_entry_links a:hover i {
+  color: #fafafa;
+}
+.catalog_entry_links a[data-disabled],
+.catalog_entry_links a[data-disabled]:hover {
+  background: none;
+  pointer-events: none;
+}
+.catalog_entry_links a[data-disabled] span,
+.catalog_entry_links a[data-disabled] i,
+.catalog_entry_links a[data-disabled]:hover span,
+.catalog_entry_links a[data-disabled]:hover i {
+  color: #d0d0d0;
+}
+
+@media screen and (max-width: 540px) {
+  .catalog_entry {
+    flex-direction: column;
+    height: unset;
+  }
+  .catalog_entry_screenshot {
+    width: 100%;
+    height: 200px;
+  }
+  .catalog_entry_links {
+    width: 100%;
+    border-left: none;
+    border-top: solid 1px #e0e0e0;
+  }
+}

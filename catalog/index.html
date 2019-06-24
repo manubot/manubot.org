@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>
-      Manubot - Docs
+      Manubot - Catalog
     </title>
     <link
       href="https://fonts.googleapis.com/css?family=Quicksand"
@@ -20,18 +20,123 @@
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="../styles.css" />
-    <link rel="stylesheet" type="text/css" href="../coming-soon.css" />
   </head>
   <body>
-    <div>
-      <h2>Coming Soon</h2>
-      <i class="fas fa-drafting-compass fa-lg"></i><br>
-      <br>
-      <div>
-        We are still in the process of gathering and presenting a complete list of papers written with Manubot.
-        In the meantime, please take a look at the <a href="..#made-with-manubot">list of notable Manubot papers</a> on the main page.
+    <header>
+      <div class="logo_container">
+        <img class="logo logo_shadow" src="logo.svg" />
+        <img class="logo" src="logo.svg" />
       </div>
-    </div>
+      <div class="logo_text">
+        <a href="..">
+          Manubot
+        </a>
+      </div>
+      <div class="logo_subtext">CATALOG<span class="cursor_blink">|</span></div>
+    </header>
+    <section id="papers">
+      <div class="row">
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </div>
+    </section>
+    <template>
+      <div class="row">
+        <div class="catalog_entry">
+          <div class="catalog_entry_screenshot">
+            <a href="">
+              <img class="catalog_entry_image" src="thumbnail.png" />
+            </a>
+          </div>
+          <div class="catalog_entry_text">
+            <div class="catalog_entry_title"></div>
+            <div class="catalog_entry_authors"></div>
+            <div class="catalog_entry_date"></div>
+          </div>
+          <div class="catalog_entry_links">
+            <a href=""
+              ><span>preprint</span><i class="fas fa-globe fa-fw"></i
+            ></a>
+            <a href=""
+              ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+            ></a>
+            <a href=""
+              ><span>source</span><i class="fab fa-github fa-fw"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </template>
+    <script>
+      const xhr = new XMLHttpRequest();
+      xhr.open('get', 'papers.json');
+      xhr.onload = function() {
+        makeList(JSON.parse(xhr.response));
+      };
+      xhr.send();
+      function makeList(list) {
+        const container = document.querySelector('#papers');
+        const template = document.querySelector('template');
+        console.log(list);
+        for (const entry of list) {
+          const newEntry = template.content.cloneNode(true);
+          const img = newEntry.querySelector('.catalog_entry_image');
+          const imgLink = newEntry.querySelector(
+            '.catalog_entry_screenshot > a'
+          );
+          const title = newEntry.querySelector('.catalog_entry_title');
+          const authors = newEntry.querySelector('.catalog_entry_authors');
+          const date = newEntry.querySelector('.catalog_entry_date');
+          const links = newEntry.querySelectorAll('.catalog_entry_links > a');
+          const preprint = links[0];
+          const journal = links[1];
+          const source = links[2];
+
+          img.src = entry.screenshot_url || 'screenshot.png';
+          imgLink.href =
+            entry.preprint_url || entry.journal_url || entry.source_url || '';
+          title.innerHTML = entry.title || '–';
+          authors.innerHTML = entry.authors || '–';
+          date.innerHTML = makeDate(entry.date);
+
+          if (entry.preprint_url) preprint.href = entry.preprint_url;
+          else preprint.setAttribute('data-disabled', '');
+          if (entry.journal_url) journal.href = entry.journal_url;
+          else journal.setAttribute('data-disabled', '');
+          if (entry.source_url) source.href = entry.source_url;
+          else source.setAttribute('data-disabled', '');
+
+          container.appendChild(newEntry);
+        }
+      }
+      function makeDate(date) {
+        date = new Date(date);
+        if (!date || isNaN(date)) return '–';
+        const month = [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec'
+        ][date.getMonth()];
+        return month + ' ' + date.getDate() + ', ' + date.getFullYear();
+      }
+    </script>
   </body>
 </html>
