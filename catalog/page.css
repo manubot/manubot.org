@@ -71,15 +71,15 @@
 .catalog_entry_links a:hover i {
   color: #fafafa;
 }
-.catalog_entry_links a[data-disabled],
-.catalog_entry_links a[data-disabled]:hover {
+.catalog_entry_links a[href=''],
+.catalog_entry_links a[href='']:hover {
   background: none;
   pointer-events: none;
 }
-.catalog_entry_links a[data-disabled] span,
-.catalog_entry_links a[data-disabled] i,
-.catalog_entry_links a[data-disabled]:hover span,
-.catalog_entry_links a[data-disabled]:hover i {
+.catalog_entry_links a[href=''] span,
+.catalog_entry_links a[href=''] i,
+.catalog_entry_links a[href='']:hover span,
+.catalog_entry_links a[href='']:hover i {
   color: #d0d0d0;
 }
 

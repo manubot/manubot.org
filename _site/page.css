@@ -1,0 +1,61 @@
+/* -------------------------------------------------- */
+/* workflow section */
+/* -------------------------------------------------- */
+.workflow_row {
+  align-items: flex-start;
+}
+.workflow_figure {
+  width: 150px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.workflow_image {
+  width: 150px;
+  height: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+}
+.workflow_arrow {
+  position: relative;
+  top: 72px;
+}
+
+/* -------------------------------------------------- */
+/* made with manubot section */
+/* -------------------------------------------------- */
+.gallery_image {
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  position: relative;
+}
+.gallery_image img,
+.gallery_image div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.gallery_image div {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 0.75em;
+  opacity: 0;
+  background: none;
+  pointer-events: none;
+  transition: opacity 0.1s ease, background 0.1s ease;
+}
+.gallery_image div * {
+  padding: 2px 5px;
+  color: #f8f8f8;
+}
+.gallery_image:hover div,
+.gallery_image:focus div {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.75);
+}

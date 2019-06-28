@@ -1,12 +1,63 @@
----
-layout: default
-title: Manubot Catalog
-logo: catalog-logo.svg
-header: Manubot
-subheader: CATALOG
----
+<html>
+  <head>
+    <title>Manubot Catalog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<section id="papers">
+    <!-- metatags - https://metatags.io/ -->
+    <meta name="title" content="Manubot Catalog" />
+    <meta name="description" content="" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manubot.org" />
+    <meta property="og:title" content="Manubot Catalog" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="/share-thumbnail.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://manubot.org" />
+    <meta property="twitter:title" content="Manubot Catalog" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="/share-thumbnail.png" />
+
+    <!-- favicons - https://realfavicongenerator.net/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon-192x192.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ad1457" />
+    <meta name="msapplication-TileColor" content="#ad1457" />
+    <meta name="theme-color" content="#ad1457" />
+
+    <!-- keywords -->
+    <meta name="keywords" content="" />
+
+    <!-- global styles -->
+    <link href="/global.css" rel="stylesheet" />
+
+    <!-- page styles -->
+    <link href="page.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <div class="logo_container">
+          <img class="logo logo_shadow" src="catalog-logo.svg" />
+          <img class="logo" src="catalog-logo.svg" />
+        </div>
+      </a>
+      <a href="/">
+        <h1>
+          Manubot
+        </h1>
+      </a>
+      <h2>CATALOG<span class="cursor_blink">|</span></h2>
+    </header>
+    <main>
+      <section id="papers">
   <div class="row">
     <div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -137,3 +188,17 @@ subheader: CATALOG
     return month + ' ' + date.getFullYear();
   }
 </script>
+
+    </main>
+    <footer>
+  <a href="https://github.com/manubot">
+    <i class="fab fa-lg fa-github"></i>
+  </a>
+  <a href="https://twitter.com/search?q=%23Manubot">
+    <i class="fab fa-lg fa-twitter"></i>
+  </a>
+  <a href="mailto:contact@manubot.org">contact@manubot.org</a>
+</footer>
+
+  </body>
+</html>
