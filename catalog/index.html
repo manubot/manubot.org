@@ -19,121 +19,66 @@ subheader: CATALOG
     </div>
   </div>
 </section>
-<template>
-  <div class="row">
-    <div class="catalog_entry">
-      <div class="catalog_entry_screenshot">
-        <a href="">
-          <img class="catalog_entry_image" src="thumbnail.png" />
-        </a>
+{% for paper in site.data.catalog %}
+<div class="row">
+  <div class="catalog_entry">
+    <div class="catalog_entry_screenshot">
+      <a
+        href="{% if paper.journal_csl_item.URL %}{{
+          paper.journal_csl_item.URL
+        }}{% elsif paper.preprint_csl_item.URL %}{{
+          paper.preprint_csl_item.URL
+        }}{% elsif paper.manubot_html_url %}{{
+          paper.manubot_html_url
+        }}{% elsif paper.source_repo_url %}{{
+          paper.source_repo_url
+        }}{% endif %}"
+      >
+        <img
+          class="catalog_entry_image"
+          src="{% if paper.thumbnail %}{{
+            paper.thumbnail
+          }}{% else %}thumbnail.png{% endif %}"
+        />
+      </a>
+    </div>
+    <div class="catalog_entry_text">
+      <div class="catalog_entry_title">
+        {% if paper.manubot_html_csl_item.title %}
+        {{ paper.manubot_html_csl_item.title }}
+        {% else %} &ndash;{% endif %}
       </div>
-      <div class="catalog_entry_text">
-        <div class="catalog_entry_title"></div>
-        <div class="catalog_entry_authors"></div>
-        <div class="catalog_entry_date"></div>
+      <div class="catalog_entry_authors">
+        {% if paper.manubot_html_csl_item.author %} {% for author in
+        paper.manubot_html_csl_item.author %}
+        {{ author.given }} {{ author.family }}, {% endfor %} {% else %}
+        &ndash;{% endif %}
       </div>
-      <div class="catalog_entry_links">
-        <a href="" title="HTML (web) interactive version of the paper"
-          ><span>html</span><i class="fas fa-globe fa-fw"></i
-        ></a>
-        <a
-          href=""
-          title="Published journal version of the paper, or preprint if published not available"
-          ><span>published</span><i class="fas fa-newspaper fa-fw"></i
-        ></a>
-        <a
-          href=""
-          title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
-          ><span>source</span><i class="fab fa-github fa-fw"></i
-        ></a>
+      <div class="catalog_entry_date">
+        {% if paper.manubot_html_csl_item.issued %}
+        {{ paper.manubot_html_csl_item.issued['date-parts'][0][0] }}
+        {% else %} &ndash;{% endif %}
       </div>
     </div>
+    <div class="catalog_entry_links">
+      <a href="{{ paper.manubot_html_url }}" title="HTML (web) interactive version of the paper"
+        ><span>html</span><i class="fas fa-globe fa-fw"></i
+      ></a>
+      <a
+        href="{% if paper.journal_csl_item.URL %}{{
+          paper.journal_csl_item.URL
+        }}{% elsif paper.preprint_csl_item.URL %}{{
+          paper.preprint_csl_item.URL
+        }}{% endif %}"
+        title="Published journal version of the paper, or preprint if published not available"
+        ><span>published</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href="{{ paper.source_repo_url }}"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
   </div>
-</template>
-<script>
-  // const xhr = new XMLHttpRequest();
-  // xhr.open('get', 'papers.json');
-  // xhr.onload = function() {
-  //   makeList(JSON.parse(xhr.response));
-  // };
-  // xhr.send();
-
-  makeList([
-    {
-      title: 'Paper Title',
-      authors:
-        'Paper Authors, Paper Authors, Paper Authors, Paper Authors, Paper Authors, Paper Authors',
-      date: '2019-10-23',
-      screenshot_url: 'screenshot.png',
-      html_url: 'html.com',
-      preprint_url: 'preprint.com',
-      journal_url: 'journal.com',
-      source_url: 'github.com'
-    },
-    {
-      title: 'Paper Title',
-      authors: 'Paper Authors',
-      date: '2019-10-23',
-      screenshot_url: 'screenshot.png',
-      html_url: 'html.com',
-      journal_url: 'journal.com',
-      source_url: 'github.com'
-    },
-    {
-      title: 'Paper Title',
-      authors: 'Paper Authors',
-      date: '2019-10-23',
-      screenshot_url: 'screenshot.png',
-      preprint_url: 'preprint.com'
-    }
-  ]);
-  function makeList(list) {
-    const container = document.querySelector('#papers');
-    const template = document.querySelector('template');
-
-    for (const entry of list) {
-      const newEntry = template.content.cloneNode(true);
-      const img = newEntry.querySelector('.catalog_entry_image');
-      const imgLink = newEntry.querySelector('.catalog_entry_screenshot > a');
-      const title = newEntry.querySelector('.catalog_entry_title');
-      const authors = newEntry.querySelector('.catalog_entry_authors');
-      const date = newEntry.querySelector('.catalog_entry_date');
-      const links = newEntry.querySelectorAll('.catalog_entry_links > a');
-      const html = links[0];
-      const published = links[1];
-      const source = links[2];
-
-      img.src = entry.screenshot_url || '/images/screenshot.png';
-      imgLink.href =
-        entry.html_url || entry.published_url || entry.source_url || '';
-      title.innerHTML = entry.title || '–';
-      authors.innerHTML = entry.authors || '–';
-      date.innerHTML = makeDate(entry.date);
-
-      html.href = entry.html_url || '';
-      published.href = entry.journal_url || entry.preprint_url || '';
-      source.href = entry.source_url || '';
-
-      container.appendChild(newEntry);
-    }
-  }
-  function makeDate(date) {
-    date = new Date(date);
-    if (!date || isNaN(date)) return '–';
-    const month = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec'
-    ][date.getMonth()];
-    return month + ' ' + date.getFullYear();
-  }
-</script>
+</div>
+{% endfor %}
