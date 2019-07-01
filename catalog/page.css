@@ -14,12 +14,13 @@ input[type='text'] {
   padding: 0 10px;
   border: solid 1px #a0a0a0;
 }
-.checkbox {
+.checkboxes {
   margin: 10px auto;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
-.checkbox > * {
+.checkboxes > * {
   cursor: pointer;
 }
 input[type='checkbox'] {
@@ -38,11 +39,11 @@ input[type='checkbox']:checked {
   background-position: center;
   background-repeat: no-repeat;
 }
-.checkbox > input[type='checkbox'] {
+.checkboxes > input[type='checkbox'] {
   margin: 0;
   margin-right: 5px;
 }
-.checkbox > label {
+.checkboxes > label:not(:last-child) {
   margin-right: 20px;
 }
 .catalog_card {
