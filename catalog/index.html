@@ -6,7 +6,7 @@ header: Manubot
 subheader: CATALOG
 ---
 
-<section id="papers">
+<section>
   <div class="row">
     <div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -19,66 +19,67 @@ subheader: CATALOG
     </div>
   </div>
 </section>
-{% for paper in site.data.catalog %}
-<div class="row">
-  <div class="catalog_entry">
-    <div class="catalog_entry_screenshot">
-      <a
-        href="{% if paper.journal_csl_item.URL %}{{
-          paper.journal_csl_item.URL
-        }}{% elsif paper.preprint_csl_item.URL %}{{
-          paper.preprint_csl_item.URL
-        }}{% elsif paper.manubot_html_url %}{{
-          paper.manubot_html_url
-        }}{% elsif paper.source_repo_url %}{{
-          paper.source_repo_url
-        }}{% endif %}"
-      >
-        <img
-          class="catalog_entry_image"
-          src="{% if paper.thumbnail %}{{
-            paper.thumbnail
-          }}{% else %}thumbnail.png{% endif %}"
-        />
-      </a>
-    </div>
-    <div class="catalog_entry_text">
-      <div class="catalog_entry_title">
-        {% if paper.manubot_html_csl_item.title %}
-        {{ paper.manubot_html_csl_item.title }}
-        {% else %} &ndash;{% endif %}
+<section>
+  {% for paper in site.data.catalog %}
+  <div class="row">
+    <div class="catalog_entry">
+      <div class="catalog_entry_screenshot">
+        <a
+          href="{% if paper.journal.url %}{{
+            paper.journal.url
+          }}{% elsif paper.preprint.url %}{{
+            paper.preprint.url
+          }}{% elsif paper.manubot.url %}{{
+            paper.manubot.url
+          }}{% elsif paper.manubot.repo_url %}{{
+            paper.manubot.repo_url
+          }}{% endif %}"
+        >
+          <img
+            class="catalog_entry_image"
+            src="{% if paper.manubot.thumbnail %}{{
+              paper.manubot.thumbnail
+            }}{% else %}thumbnail.png{% endif %}"
+          />
+        </a>
       </div>
-      <div class="catalog_entry_authors">
-        {% if paper.manubot_html_csl_item.author %} {% for author in
-        paper.manubot_html_csl_item.author %}
-        {{ author.given }} {{ author.family }}, {% endfor %} {% else %}
-        &ndash;{% endif %}
+      <div class="catalog_entry_text">
+        <div class="catalog_entry_title">
+          {% if paper.manubot.title %}
+          {{ paper.manubot.title | truncate: 150 }}
+          {% else %} &ndash;{% endif %}
+        </div>
+        <div class="catalog_entry_authors">
+          {% if paper.manubot.authors %}
+          {{ paper.manubot.authors }}
+          {% else %} &ndash;{% endif %}
+        </div>
+        <div class="catalog_entry_date">
+          {% if paper.manubot.date_human %}
+          {{ paper.manubot.date_human }}
+          {% else %} &ndash;{% endif %}
+        </div>
       </div>
-      <div class="catalog_entry_date">
-        {% if paper.manubot_html_csl_item.issued %}
-        {{ paper.manubot_html_csl_item.issued['date-parts'][0][0] }}
-        {% else %} &ndash;{% endif %}
+      <div class="catalog_entry_links">
+        <a
+          href="{{ paper.manubot.url }}"
+          title="Manubot HTML (web) interactive version of the paper"
+          ><span>html</span><i class="fas fa-globe fa-fw"></i
+        ></a>
+        <a
+          href="{% if paper.journal.url %}{{
+            paper.journal.url
+          }}{% elsif paper.preprint.url %}{{ paper.preprint.url }}{% endif %}"
+          title="Published journal version of the paper, or preprint if published not available"
+          ><span>published</span><i class="fas fa-newspaper fa-fw"></i
+        ></a>
+        <a
+          href="{{ paper.manubot.repo_url }}"
+          title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+          ><span>source</span><i class="fab fa-github fa-fw"></i
+        ></a>
       </div>
-    </div>
-    <div class="catalog_entry_links">
-      <a href="{{ paper.manubot_html_url }}" title="HTML (web) interactive version of the paper"
-        ><span>html</span><i class="fas fa-globe fa-fw"></i
-      ></a>
-      <a
-        href="{% if paper.journal_csl_item.URL %}{{
-          paper.journal_csl_item.URL
-        }}{% elsif paper.preprint_csl_item.URL %}{{
-          paper.preprint_csl_item.URL
-        }}{% endif %}"
-        title="Published journal version of the paper, or preprint if published not available"
-        ><span>published</span><i class="fas fa-newspaper fa-fw"></i
-      ></a>
-      <a
-        href="{{ paper.source_repo_url }}"
-        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
-        ><span>source</span><i class="fab fa-github fa-fw"></i
-      ></a>
     </div>
   </div>
-</div>
-{% endfor %}
+  {% endfor %}
+</section>
