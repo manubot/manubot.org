@@ -40,7 +40,7 @@ input[type='checkbox'] {
   border-radius: 4px;
   background: #f8f8f8;
   overflow: hidden;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 .catalog_card_thumbnail {
@@ -62,11 +62,14 @@ input[type='checkbox'] {
   transform: scale(1.25);
 }
 .catalog_card_thumbnail > div {
-  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 0;
-  background: #f8f8f8;
-  padding: 3px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.5);
 }
 .catalog_card_thumbnail > div > i {
   margin: 0;
@@ -148,6 +151,7 @@ mark {
   .catalog_card {
     flex-direction: column;
     height: unset;
+    margin: 50px auto;
   }
   .catalog_card_thumbnail {
     width: 100%;
