@@ -4,10 +4,15 @@ form {
   margin: 0;
   padding: 20px;
 }
+input {
+  border-radius: 3px;
+  border: none;
+}
 input[type='text'] {
   width: 100%;
   height: 30px;
-  padding: 5px;
+  padding: 0 10px;
+  border: solid 1px #a0a0a0;
 }
 .checkbox {
   margin: 10px auto;
@@ -20,6 +25,18 @@ input[type='text'] {
 input[type='checkbox'] {
   width: 16px;
   height: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #d0d0d0;
+  position: relative;
+}
+input[type='checkbox']:checked {
+  background-color: #ad1457;
+  background-image: url('/images/checkmark.svg');
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .checkbox > input[type='checkbox'] {
   margin: 0;
