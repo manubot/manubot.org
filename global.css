@@ -269,7 +269,7 @@ footer {
   border-radius: 4px;
   box-shadow: 0 2px;
   text-decoration: none;
-  transition: background 0.1s ease, color 0.1s ease;
+  transition: background 0.1s ease;
 }
 .button_link * {
   color: #ad1457;
