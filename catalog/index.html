@@ -23,6 +23,7 @@ subheader: CATALOG
   {% for paper in site.data.catalog %}
   <div class="row">
     <div class="catalog_entry">
+      <!-- {{ paper.comments }} -->
       <div class="catalog_entry_screenshot">
         <a
           href="{% if paper.journal.url %}{{
@@ -70,8 +71,19 @@ subheader: CATALOG
           href="{% if paper.journal.url %}{{
             paper.journal.url
           }}{% elsif paper.preprint.url %}{{ paper.preprint.url }}{% endif %}"
-          title="Published journal version of the paper, or preprint if published not available"
-          ><span>published</span><i class="fas fa-newspaper fa-fw"></i
+          title="
+          {% if paper.journal.url %}
+          Journal version of the paper, published in {{ paper.journal.journal }}
+          {% elsif paper.preprint.url %}
+          Preprint version of the paper, published in {{ paper.preprint.journal }}
+          {% else %}
+          Published journal or preprint version of the paper
+          {% endif %}
+          "
+          ><span
+            >{% if paper.journal.url %}journal{% elsif paper.preprint.url
+            %}preprint{% else %}journal{% endif %}</span
+          ><i class="fas fa-newspaper fa-fw"></i
         ></a>
         <a
           href="{{ paper.manubot.repo_url }}"
