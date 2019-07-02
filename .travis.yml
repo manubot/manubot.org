@@ -14,6 +14,7 @@ install:
   - bundle install --jobs=3
 script:
   - bundle exec jekyll build
+  - ls -l
 deploy:
   provider: script
   script: bash deploy.sh
