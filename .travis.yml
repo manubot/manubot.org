@@ -5,11 +5,11 @@ branches:
   - gh-pages
 language: ruby
 before_install:
-  - which python
-  - python --version
   - gem update --system
   - gem install bundler
 install:
+  - pip install --upgrade ghp-import
+  - pip install --user $(whoami) --upgrade ghp-import
   - bundle install
 script:
   - bundle exec jekyll build
