@@ -8,3 +8,5 @@ cache:
   - bundler
 script:
   - bundle exec jekyll build
+  - which python
+  - python --version
