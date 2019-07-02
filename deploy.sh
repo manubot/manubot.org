@@ -12,7 +12,7 @@ set -o errexit \
 eval "$(ssh-agent -s)"
 # Ensure command traces are disabled while dealing with the private key
 set +o xtrace
-echo -e $TRAVIS_SSH_PRIVATE_KEY | ssh-add -
+base64 --decode <<< $TRAVIS_BASE64_SSH_PRIVATE_KEY | ssh-add -
 set -o xtrace
 
 # Configure git
@@ -36,9 +36,8 @@ based on https://github.com/$TRAVIS_REPO_SLUG/commit/$TRAVIS_COMMIT
 [skip ci]
 "
 # echo >&2 "$commit_message"
-#pip install --user $(whoami) --upgrade ghp-import
-pip install --upgrade ghp-import
 ghp-import \
   --push --no-jekyll \
+  --cname=manubot.org \
   --message="$commit_message" \
   _site

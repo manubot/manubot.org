@@ -11,7 +11,7 @@ before_install:
   - gem install bundler
 install:
   - pip install --user $(whoami) --upgrade ghp-import
-  - bundle install
+  - bundle install --jobs=3
 script:
   - bundle exec jekyll build
 deploy:
