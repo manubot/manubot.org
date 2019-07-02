@@ -1,0 +1,10 @@
+dist: xenial
+sudo: false
+branches:
+  except:
+  - gh-pages
+language: ruby
+cache:
+  - bundler
+script:
+  - bundle exec jekyll build
