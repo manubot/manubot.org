@@ -10,3 +10,10 @@ script:
   - bundle exec jekyll build
   - which python
   - python --version
+  - pip install --upgrade ghp-import
+  - pip install --user $(whoami) --upgrade ghp-import
+deploy:
+  provider: script
+  script: bash deploy.sh
+  on:
+    branch: master
