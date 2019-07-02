@@ -4,16 +4,14 @@ branches:
   except:
   - gh-pages
 language: ruby
-cache:
-  - bundler
 script:
-  - gem install bundler
-  - bundle install
-  - bundle exec jekyll build
   - which python
   - python --version
   - pip install --upgrade ghp-import
   - pip install --user $(whoami) --upgrade ghp-import
+  - gem install bundler
+  - bundle install
+  - bundle exec jekyll build
 deploy:
   provider: script
   script: bash deploy.sh
