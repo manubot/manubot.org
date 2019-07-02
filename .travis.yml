@@ -14,8 +14,8 @@ install:
   - bundle install --jobs=3
 script:
   - bundle exec jekyll build
-  - ls -l
 deploy:
+  skip_cleanup: true
   provider: script
   script: bash deploy.sh
   on:
