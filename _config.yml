@@ -1,3 +1,0 @@
-jekyll_get:
-  data: catalog
-  json: 'https://manubot.github.io/catalog/catalog.json'
