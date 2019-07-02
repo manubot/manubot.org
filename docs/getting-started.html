@@ -1,41 +1,45 @@
 <html>
   <head>
-    <title>
-      Manubot - Docs - Getting Started
-    </title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Quicksand"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Inconsolata"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../styles.css" />
-    <link rel="stylesheet" type="text/css" href="../coming-soon.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        font-family: 'Source Sans Pro', sans-serif;
+        color: #fafafa;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #ad1457;
+        padding: 0;
+      }
+      video {
+        width: 800px;
+      }
+      @media (max-width: 800px) {
+        video {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <video controls autoplay muted>
-        <source src="https://ndownloader.figshare.com/files/14874821" type="video/mp4" >
-      </video>
-      <h2>Coming Soon</h2>
-      <i class="fas fa-drafting-compass fa-lg"></i><br>
-      <br>
-      <div>
-        We are currently in the process of redesigning the Manubot workflow to be simpler and easier to use.
-        We are waiting until this is complete to continue writing the docs, as it will significantly change how Manubot works.
-        In the meantime, please refer the <a href="https://github.com/manubot/rootstock/blob/master/USAGE.md">documentation</a>, <a href="https://github.com/manubot/rootstock/issues">discussions</a>, and <a href="https://github.com/manubot/rootstock">template manuscript</a> on <a href="https://github.com/manubot">GitHub</a>.
-      </div>
-    </div>
+    <video controls autoplay muted>
+      <source
+        src="https://ndownloader.figshare.com/files/14874821"
+        type="video/mp4"
+      />
+    </video>
+    <p>
+      For more information, please refer to the
+      <a href="https://github.com/manubot/rootstock/blob/master/USAGE.md"
+        >usage documentation</a
+      >, <a href="https://github.com/manubot/rootstock/issues">discussions</a>,
+      <a href="https://github.com/manubot/rootstock">template manuscript</a>,
+      and
+      <a href="https://github.com/manubot/try-manubot">try-me manuscript</a> on
+      <a href="https://github.com/manubot">GitHub</a>.
+    </p>
   </body>
 </html>

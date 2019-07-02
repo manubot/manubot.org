@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- metatags - https://metatags.io/ -->
+    <meta name="title" content="{{ page.title }}" />
+    <meta name="description" content="{{ page.description }}" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manubot.org" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta property="og:image" content="/share-thumbnail.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://manubot.org" />
+    <meta property="twitter:title" content="{{ page.title }}" />
+    <meta property="twitter:description" content="{{ page.description }}" />
+    <meta property="twitter:image" content="/share-thumbnail.png" />
+
+    <!-- favicons - https://realfavicongenerator.net/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon-192x192.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ad1457" />
+    <meta name="msapplication-TileColor" content="#ad1457" />
+    <meta name="theme-color" content="#ad1457" />
+
+    <!-- keywords -->
+    <meta name="keywords" content="{{ page.keywords }}" />
+
+    <!-- global styles -->
+    <link href="/global.css" rel="stylesheet" />
+
+    <!-- page styles -->
+    <link href="page.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <div class="logo_container">
+          <img class="logo logo_shadow" src="{{ page.logo }}" />
+          <img class="logo" src="{{ page.logo }}" />
+        </div>
+      </a>
+      <a href="/">
+        <h1>
+          {{ page.header }}
+        </h1>
+      </a>
+      <h2>{{ page.subheader }}<span class="cursor_blink">|</span></h2>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

@@ -1,396 +1,432 @@
-<html>
-  <head>
-    <title>Manubot - Manuscripts, open and automated.</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+---
+layout: default
+title: Manubot - Manuscripts, open and automated
+description: A tool set and workflow for scholarly publishing that is open, collaborative, continuous, automated, reproducible, and free.
+keywords: scholarly, publishing, publisher, manuscript, document, academic, education, open, collaborative, reproducible, free, edit, collaborate, ideas, version control, code, writing, automatic, digital, interactive, print, fair, hackable
+logo: logo-animated.svg
+header: Manubot
+subheader: Manuscripts, open and automated.
+---
 
-    <!-- metatags -->
-    <meta
-      name="title"
-      property="og:title"
-      content="Manubot - Manuscripts, open and automated"
-    />
-    <meta
-      name="description"
-      property="og:description"
-      content="A tool set and workflow for scholarly publishing that is open, collaborative, continuous, automated, reproducible, and free."
-    />
-    <meta
-      name="keywords"
-      content="scholarly, publishing, publisher, manuscript, document, academic, education, open, collaborative, reproducible, free, edit, collaborate, ideas, version control, code, writing, automatic, digital, interactive, print, fair, hackable"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://manubot.org/" />
-
-    <!-- styles and fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Quicksand"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500,600,700"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Inconsolata"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-
-    <!-- favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ad1457" />
-    <meta name="msapplication-TileColor" content="#ad1457" />
-    <meta name="theme-color" content="#ad1457" />
-    <meta property="og:image" content="share-thumbnail.png" />
-  </head>
-  <body>
-    <header>
-      <div class="logo_container">
-        <img class="logo logo_shadow" src="logo-animated.svg" />
-        <img class="logo" src="logo-animated.svg" />
+<section>
+  <div class="row">
+    <p>
+      <span class="semibold"
+        >Manubot is a workflow and set of tools for the next generation of
+        scholarly publishing.</span
+      >
+      Write your manuscript in
+      <a href="https://www.markdownguide.org/">markdown</a>, track it with
+      <a href="https://git-scm.com/">git</a>, automatically convert it to
+      <code>.html</code>, <code>.pdf</code>, or <code>.docx</code>, and deploy
+      it to your <a href="https://pages.github.com/">destination</a> of choice.
+    </p>
+  </div>
+  <div class="row">
+    <a href="/docs/getting-started.html" class="button_link">
+      <i class="fas fa-graduation-cap"></i>
+      Get Started
+    </a>
+    <a href="https://github.com/manubot" class="button_link">
+      <i class="fab fa-lg fa-github"></i>
+      On GitHub
+    </a>
+  </div>
+</section>
+<section id="how-it-works">
+  <h3>How It Works</h3>
+  <div class="row workflow_row">
+    <figure class="workflow_figure">
+      <img src="images/step1.png" class="workflow_image" />
+      <figcaption>input <code>markdown</code></figcaption>
+    </figure>
+    <div class="workflow_arrow">
+      <i class="fas fa-long-arrow-alt-right fa-lg"></i>
+    </div>
+    <figure class="workflow_figure">
+      <img src="images/step2.png" class="workflow_image" />
+      <figcaption>
+        process w/ Manubot tools and
+        <a href="https://pandoc.org/">Pandoc</a>
+      </figcaption>
+    </figure>
+    <div class="workflow_arrow">
+      <i class="fas fa-long-arrow-alt-right fa-lg"></i>
+    </div>
+    <figure class="workflow_figure">
+      <img src="images/step3.png" class="workflow_image" />
+      <figcaption>
+        output <code>.html</code>, <code>.pdf</code>, <code>.docx</code>
+      </figcaption>
+    </figure>
+    <div class="workflow_arrow">
+      <i class="fas fa-long-arrow-alt-right fa-lg"></i>
+    </div>
+    <figure class="workflow_figure">
+      <img src="images/step4.png" class="workflow_image" />
+      <figcaption>test and deploy</figcaption>
+    </figure>
+  </div>
+</section>
+<section id="the-best-parts">
+  <h3>The Best Parts</h3>
+  <div class="row">
+    <div class="col_text">
+      <h4><i class="fas fa-atlas fa-lg"></i> Open, collaborative, versioned</h4>
+      <p>
+        Author your manuscript the open-source way. Let anyone propose changes.
+        <a href="https://greenelab.github.io/meta-review/#fig:workflow"
+          >Iteratively</a
+        >
+        review, discuss, and refine with collaborators. Coordinate teams of
+        <a href="https://greenelab.github.io/meta-review/#fig:contrib"
+          >any size</a
+        >
+        with ease. Keep track of versions, to-dos, revisions, and who wrote what
+        and when. All in a
+        <a href="https://github.com/">central location</a>.
+      </p>
+    </div>
+    <div class="col_image">
+      <div class="slideshow">
+        <img src="images/open-1.png" />
+        <img src="images/open-2.png" />
+        <img src="images/open-3.png" />
       </div>
-      <div class="logo_text">
-        Manubot
+    </div>
+  </div>
+  <div class="row">
+    <div class="col_image">
+      <div class="slideshow">
+        <img src="images/automated-1.png" />
+        <img src="images/automated-2.png" />
+        <img src="images/automated-3.png" />
       </div>
-      <div class="logo_subtext">
-        Manuscripts, open and automated.<span class="cursor_blink">|</span>
+    </div>
+    <div class="col_text">
+      <h4><i class="fas fa-magic fa-lg"></i> Automated and continuous</h4>
+      <p>
+        Never use a reference manager again. Provide a DOI, ISBN, PubMed ID,
+        URL, etc., and let Manubot generate and number citations for you.
+        Choose from <a href="https://www.zotero.org/styles">thousands</a> of
+        existing
+        <a title="Citation Style Language" href="https://citationstyles.org/"
+          >citation styles</a
+        >. See your manuscript update right away as you make changes. Test and
+        deploy automatically with
+        <a href="https://travis-ci.org/">continuous integration</a>.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col_text">
+      <h4>
+        <i class="fas fa-hand-point-up fa-lg"></i> Beautiful and interactive
+      </h4>
+      <p>
+        Static is out, dynamic is in. The contemporary look and interactive
+        features people have come to love and expect from modern webpages, now
+        applied to scholarly articles: tooltips, public annotations, table of
+        contents, figure viewer, and more.
+      </p>
+    </div>
+    <div class="col_image">
+      <div class="slideshow">
+        <img src="images/interactive-1.png" />
+        <img src="images/interactive-2.png" />
+        <img src="images/interactive-3.png" />
       </div>
-    </header>
-    <section>
-        <div class="row">
-            <div class="emphasis">
-              <span class="semibold">Manubot is a workflow and set of tools for the next generation of scholarly publishing.</span>
-              Write your manuscript in <a href="https://www.markdownguide.org/">markdown</a>,
-              track it with <a href="https://git-scm.com/">git</a>,
-              automatically convert it to <code>.html</code>, <code>.pdf</code>, or <code>.docx</code>,
-              and deploy it to your <a href="https://pages.github.com/">destination</a> of choice.
-            </div>
-          </div>
-      <div class="row flex_wrap">
-        <a href="docs/getting-started.html" class="button_link">
-          <i class="fas fa-graduation-cap"></i>
-          Get Started
-        </a>
-        <a href="docs" class="button_link">
-          <i class="fas fa-lg fa-book"></i>
-          Docs
-        </a>
-        <a href="https://github.com/manubot" class="button_link">
-          <i class="fab fa-lg fa-github"></i>
-          On GitHub
-        </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col_image">
+      <div class="slideshow">
+        <img src="images/free-1.png" />
+        <img src="images/free-2.png" />
+        <img src="images/free-3.png" />
       </div>
-      
-    </section>
-    <section id="how-it-works">
-      <div class="section_header">How It Works</div>
-      <figure class="row flex_wrap workflow_row">
-        <figure class="workflow_figure">
-          <img src="images/step1.png" class="workflow_image" />
-          <figcaption>input <code>markdown</code></figcaption>
-        </figure>
-        <div class="workflow_arrow">
-          <i class="fas fa-long-arrow-alt-right fa-lg"></i>
-        </div>
-        <figure class="workflow_figure">
-          <img src="images/step2.png" class="workflow_image" />
-          <figcaption>
-            process w/ Manubot tools and <a href="https://pandoc.org/">Pandoc</a>
-          </figcaption>
-        </figure>
-        <div class="workflow_arrow">
-          <i class="fas fa-long-arrow-alt-right fa-lg"></i>
-        </div>
-        <figure class="workflow_figure">
-          <img src="images/step3.png" class="workflow_image" />
-          <figcaption>
-            output <code>.html</code>, <code>.pdf</code>, <code>.docx</code>
-          </figcaption>
-        </figure>
-        <div class="workflow_arrow">
-          <i class="fas fa-long-arrow-alt-right fa-lg"></i>
-        </div>
-        <figure class="workflow_figure">
-          <img src="images/step4.png" class="workflow_image" />
-          <figcaption>test and deploy</figcaption>
-        </figure>
+    </div>
+    <div class="col_text">
+      <h4><i class="fas fa-lock-open fa-lg"></i> Free and open-source</h4>
+      <p>
+        There's no need to pay to produce brilliant manuscripts. Manubot is free
+        and open-source (aside from optional workflow integration with
+        <a href="http://github.com/">GitHub</a> and
+        <a href="https://travis-ci.org/">Travis CI</a>). Its tools are developed
+        and supported by a community of responsive and passionate software
+        developers and researchers.
+      </p>
+    </div>
+  </div>
+</section>
+<section id="made-with-manubot">
+  <h3>
+    Made With Manubot
+  </h3>
+  <div class="row">
+    <a
+      href="https://slochower.github.io/smirnoff-host-guest-manuscript/"
+      class="gallery_image"
+    >
+      <img src="images/smirnoff.png" />
+      <div>
+        <b
+          >Binding thermodynamics of host-guest systems with SMIRNOFF99Frosst
+          1.0.5 from the Open Force Field Initiative</b
+        >
+        <i>D. Slochower, et al</i>
       </div>
-    </section>
-    <section id="the-best-parts">
-      <div class="section_header">The Best Parts</div>
-      <div class="row flex_wrap_reverse">
-        <div class="col_text">
-          <div class="col_header">
-            <i class="fas fa-atlas fa-lg"></i> Open, collaborative, versioned
-          </div>
-          <div>
-            Author your manuscript the open-source way.
-            Let anyone propose changes.
-            <a href="https://greenelab.github.io/meta-review/#fig:workflow">Iteratively</a> review, discuss, and refine with collaborators.
-            Coordinate teams of <a href="https://greenelab.github.io/meta-review/#fig:contrib">any size</a> with ease.
-            Keep track of versions, to-dos, revisions, and who wrote what and when.
-            All in a <a href="https://github.com/">central location</a>.
-          </div>
-        </div>
-        <div class="col_image">
-          <div class="slideshow">
-            <img src="images/open-1.png" />
-            <img src="images/open-2.png" />
-            <img src="images/open-3.png" />
-          </div>
-        </div>
+    </a>
+    <a
+      href="https://laurentperrinet.github.io/2019-05_illusions-visuelles/"
+      class="gallery_image"
+    >
+      <img src="images/illusions.png" />
+      <div>
+        <b
+          >Des illusions visuelles aux hallucinations: une porte sur la
+          perception</b
+        >
+        <i>L. Perrinet</i>
       </div>
-      <div class="row flex_wrap">
-        <div class="col_image">
-          <div class="slideshow">
-            <img src="images/automated-1.png" />
-            <img src="images/automated-2.png" />
-            <img src="images/automated-3.png" />
-          </div>
-        </div>
-        <div class="col_text">
-          <div class="col_header">
-            <i class="fas fa-magic fa-lg"></i> Automated and continuous
-          </div>
-          <div>
-            Never use a reference manager again.
-            Provide a DOI, ISBN, PubMed ID, URL, etc., and let Manubot generate and number citations for you.
-            Choose from <a href="https://www.zotero.org/styles">thousands</a> of existing <a title="Citation Style Language" href="https://citationstyles.org/">citation styles</a>.
-            See your manuscript update right away as you make changes.
-            Test and deploy automatically with <a href="https://travis-ci.org/">continuous integration</a>.
-          </div>
-        </div>
+    </a>
+    <a href="https://greenelab.github.io/deep-review/" class="gallery_image">
+      <img src="images/deep-review.png" />
+      <div>
+        <b
+          >Opportunities and obstacles for deep learning in biology and
+          medicine: 2019 update</b
+        >
+        <i>T. Ching, et al</i>
       </div>
-      <div class="row flex_wrap_reverse">
-        <div class="col_text">
-          <div class="col_header">
-            <i class="fas fa-hand-point-up fa-lg"></i> Beautiful and interactive
-          </div>
-          <div>
-            Static is out, dynamic is in.
-            The contemporary look and interactive features people have come to love and expect from modern webpages, now applied to scholarly articles:
-            tooltips, public annotations, table of contents, figure viewer, and more.
-          </div>
-        </div>
-        <div class="col_image">
-          <div class="slideshow">
-            <img src="images/interactive-1.png" />
-            <img src="images/interactive-2.png" />
-            <img src="images/interactive-3.png" />
-          </div>
-        </div>
+    </a>
+    <a
+      href="https://git.dhimmel.com/rephetio-manuscript/"
+      class="gallery_image"
+    >
+      <img src="images/rephetio.png" />
+      <div>
+        <b
+          >Systematic integration of biomedical knowledge prioritizes drugs for
+          repurposing</b
+        >
+        <i>D. Himmelstein, et al</i>
       </div>
-      <div class="row flex_wrap">
-        <div class="col_image">
-          <div class="slideshow">
-            <img src="images/free-1.png" />
-            <img src="images/free-2.png" />
-            <img src="images/free-3.png" />
-          </div>
-        </div>
-        <div class="col_text">
-          <div class="col_header">
-            <i class="fas fa-lock-open fa-lg"></i> Free and open-source
-          </div>
-          <div>
-            There's no need to pay to produce brilliant manuscripts.
-            Manubot is free and open-source (aside from optional workflow integration with <a href="http://github.com/">GitHub</a> and <a href="https://travis-ci.org/">Travis CI</a>).
-            Its tools are developed and supported by a community of responsive and passionate software developers and researchers.
-          </div>
-        </div>
+    </a>
+    <a href="https://trang1618.github.io/tpot-fss-ms/" class="gallery_image">
+      <img src="images/tpot.png" />
+      <div>
+        <b
+          >Scaling tree-based automated machine learning to biomedical big data
+          with a feature set selector</b
+        >
+        <i>T. Le, et al</i>
       </div>
-    </section>
-    <section id="made-with-manubot">
-      <div class="section_header">
-        Made With Manubot
+    </a>
+    <a
+      href="https://greenelab.github.io/scihub-manuscript/"
+      class="gallery_image"
+    >
+      <img src="images/scihub.png" />
+      <div>
+        <b>Sci-Hub provides access to nearly all scholarly literature</b>
+        <i>D. Himmelstein, et al</i>
       </div>
-      <div class="row flex_wrap">
-        <a href="https://slochower.github.io/smirnoff-host-guest-manuscript/" class="example_image">
-          <img src="images/smirnoff.png" />
-          <div>
-            <b>Binding thermodynamics of host-guest systems with SMIRNOFF99Frosst 1.0.5 from the Open Force Field Initiative</b>
-            <i>D. Slochower, et al</i>
-          </div>
-        </a>
-        <a href="https://laurentperrinet.github.io/2019-05_illusions-visuelles/" class="example_image">
-          <img src="images/illusions.png" />
-          <div>
-            <b>Des illusions visuelles aux hallucinations: une porte sur la perception</b>
-            <i>L. Perrinet</i>
-          </div>
-        </a>
-        <a href="https://greenelab.github.io/deep-review/" class="example_image">
-          <img src="images/deep-review.png" />
-          <div>
-            <b>Opportunities and obstacles for deep learning in biology and medicine: 2019 update</b>
-            <i>T. Ching, et al</i>
-          </div>
-        </a>
-        <a href="https://git.dhimmel.com/rephetio-manuscript/" class="example_image">
-          <img src="images/rephetio.png" />
-          <div>
-            <b>Systematic integration of biomedical knowledge prioritizes drugs for repurposing</b>
-            <i>D. Himmelstein, et al</i>
-          </div>
-        </a>
-        <a href="https://trang1618.github.io/tpot-fss-ms/" class="example_image">
-          <img src="images/tpot.png" />
-          <div>
-            <b>Scaling tree-based automated machine learning to biomedical big data with a feature set selector</b>
-            <i>T. Le, et al</i>
-          </div>
-        </a>
-        <a href="https://greenelab.github.io/scihub-manuscript/" class="example_image">
-          <img src="images/scihub.png" />
-          <div>
-            <b>Sci-Hub provides access to nearly all scholarly literature</b>
-            <i>D. Himmelstein, et al</i>
-          </div>
-        </a>
-        <a href="https://openclimatedata.github.io/global-emissions/" class="example_image">
-          <img src="images/emissions.png" />
-          <div>
-            <b>Global Emissions Timeseries</b>
-            <i>R. Gieseke, et al</i>
-          </div>
-        </a>
-        <a href="https://jmonlong.github.io/manu-vgsv/" class="example_image">
-          <img src="images/pangenome.png" />
-          <div>
-            <b>Genotyping structural variants in pangenome graphs using the vg toolkit</b>
-            <i>J. Monlong, et al</i>
-          </div>
-        </a>
-        <a href="https://benjamin-lee.github.io/deep-rules/" class="example_image">
-          <img src="images/deep-tips.png" />
-          <div>
-            <b>Ten Quick Tips for Deep Learning in Biology</b>
-            <i>B. Lee, et al</i>
-          </div>
-        </a>
-        <a href="https://simonvh.github.io/gimmemotifs-manuscript/" class="example_image">
-          <img src="images/gimmemotifs.png" />
-          <div>
-            <b>GimmeMotifs: an analysis framework for transcription factor motif analysis</b>
-            <i>S. Heeringen, et al</i>
-          </div>
-        </a>
+    </a>
+    <a
+      href="https://openclimatedata.github.io/global-emissions/"
+      class="gallery_image"
+    >
+      <img src="images/emissions.png" />
+      <div>
+        <b>Global Emissions Timeseries</b>
+        <i>R. Gieseke, et al</i>
       </div>
-      <div class="row flex_wrap">
-        <a href="catalog" class="button_link">
-          <i class="fas fa-book-open fa-lg"></i> Full Catalog
-        </a>
+    </a>
+    <a href="https://jmonlong.github.io/manu-vgsv/" class="gallery_image">
+      <img src="images/pangenome.png" />
+      <div>
+        <b
+          >Genotyping structural variants in pangenome graphs using the vg
+          toolkit</b
+        >
+        <i>J. Monlong, et al</i>
       </div>
-    </section>
-    <section id="our-philosophy">
-      <div class="section_header">
-        Our Philosophy
+    </a>
+    <a href="https://benjamin-lee.github.io/deep-rules/" class="gallery_image">
+      <img src="images/deep-tips.png" />
+      <div>
+        <b>Ten Quick Tips for Deep Learning in Biology</b>
+        <i>B. Lee, et al</i>
       </div>
-      <div class="row">
-        <div>
-          Manuscripts are the primary basis of scholarly communication, yet the process of creating them has not kept in step with the advancement of technology or the evolving best-practices of science.<br />
-          <br />
-          Traditionally, authoring of manuscripts takes place in a closed manner.
-          While most scientific material is eventually distributed to some kind of public medium, the process of developing and reviewing the material is usually done in private, contained to a handful of individuals.
-          The tools used are often outmoded, restrictive, and overall poorly-suited for the task of collaborative, scientific writing.
-          The time it takes to review and publish can be <a href="https://www.nature.com/news/does-it-take-too-long-to-publish-research-1.19320">unreasonably long</a>.<br />
-          <br />
-          We believe that this process is antiquated and must be reformed.
-          Good science depends upon many things that the conventional approach doesn't provide:
-          A diversity of input and perspectives.
-          Spontaneous and cross-discipline contributions.
-          Organic and wide-spread discovery and dissemination of knowledge.
-          The fostering of a free, global information commons.
-          A method of real-time, continuous science, performed entirely in the open.<br />
-          <br />
-          Current technology easily affords huge advantages over the old way of doing things, both in convenience and in the quality of the result.
-          Manubot is a solution to the past and a push towards a future ideal, where scientific writing is
-          transparent, reproducible, immediate, permissionless, versioned, automated, collaborative, open, linked, provenanced, decentralized, hackable, interactive, annotated, and free of charge.
-        </div>
+    </a>
+    <a
+      href="https://simonvh.github.io/gimmemotifs-manuscript/"
+      class="gallery_image"
+    >
+      <img src="images/gimmemotifs.png" />
+      <div>
+        <b
+          >GimmeMotifs: an analysis framework for transcription factor motif
+          analysis</b
+        >
+        <i>S. Heeringen, et al</i>
       </div>
-    </section>
-    <section id="cite-manubot">
-      <div class="section_header">
-        Cite Manubot
-      </div>
-      <div class="row">
-        <div>
-          To reference the Manubot project, you can cite the following software paper (AKA the "Meta Review") describing the functionality and benefits of Manubot:
-        </div>
-      </div>
-      <div class="row">
-        <div class="banner_box">
-          <b>Open collaborative writing with Manubot</b><br />
-          Daniel S. Himmelstein, Vincent Rubinetti, David R. Slochower, Dongbo Hu, Venkat S. Malladi, Casey S. Greene, Anthony Gitter<br />
-          <i>PLOS Computational Biology</i> (2019-06-24)
-          <a href="https://doi.org/c7np">https://doi.org/c7np</a><br />
-          DOI: <a href="https://doi.org/10.1371/journal.pcbi.1007128">10.1371/journal.pcbi.1007128</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31233491">31233491</a>
-        </div>
-      </div>
-      <div class="row">
-        <div>
-          A Manubot version of this manuscript is <a href="https://greenelab.github.io/meta-review/"><b>also available</b></a> (<a href="https://github.com/greenelab/meta-review">source code</a>).
-        </div>
-      </div>
-    </section>
-    <section id="acknowledgements">
-      <div class="section_header">
-        Acknowledgements
-      </div>
-      <div class="row flex_wrap">
-        <figure>
-          <a href="https://sloan.org/"><img src="images/alfred-p-sloan-foundation.png" height="60px" /></a>
-          <figcaption>
-            <a href="https://sloan.org/grant-detail/8501">Grant G-2018-11163</a>
-          </figcaption>
-        </figure>
-        <figure>
-          <a href="https://www.moore.org/"><img src="images/gordon-betty-moore-foundation.png" height="60px" /></a>
-          <figcaption>
-            <a href="https://www.moore.org/grant-detail?grantId=GBMF4552">Grant GBMF4552</a>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="row flex_wrap">
-        <figure>
-          <a href="https://github.com/dhimmel"><img src="images/daniel-himmelstein.png" class="acknowledgement_image"  height="170px" /></a>
-          <figcaption>
-            <span class="semibold">Daniel Himmelstein</span><br />
-            <a href="http://www.greenelab.com/">Greene Lab</a><br />
-            <a href="https://www.upenn.edu/">Univ. of Pennsylvania</a>
-          </figcaption>
-        </figure>
-        <figure>
-          <a href="https://github.com/agitter"><img src="images/anthony-gitter.png" class="acknowledgement_image"  height="170px" /></a>
-          <figcaption>
-            <span class="semibold">Anthony Gitter</span><br />
-            <a href="https://morgridge.org/research/virology/gitter-lab/">Morgridge Institute</a><br />
-            <a href="https://www.biostat.wisc.edu/~gitter/">Univ. of Wisconsin-Madison</a>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="row">
-        <div>
-          As an open source project, Manubot relies on a community of maintainers, contributors, and users.
-          For a list of all the individuals who have made Manubot possible, see <a href="https://github.com/manubot/rootstock/graphs/contributors">the contributors on GitHub</a> and <a href="https://greenelab.github.io/meta-review/">the authors and acknowledgements here</a>.
-        </div>
-      </div>
-    </section>
-    <footer>
-      <a href="https://github.com/manubot">
-        <i class="fab fa-lg fa-github"></i>
-      </a>
-      <a href="https://twitter.com/search?q=%23Manubot">
-        <i class="fab fa-lg fa-twitter"></i>
-      </a>
-      <a href="mailto:contact@manubot.org">contact@manubot.org</a>
-    </footer>
-    <script src="slideshow.js"></script>
-  </body>
-</html>
+    </a>
+  </div>
+  <div class="row">
+    <a href="/catalog" class="button_link">
+      <i class="fas fa-book-open fa-lg"></i> Full Catalog
+    </a>
+  </div>
+</section>
+<section id="our-philosophy">
+  <h3>
+    Our Philosophy
+  </h3>
+  <div class="row">
+    <p>
+      Manuscripts are the primary basis of scholarly communication, yet the
+      process of creating them has not kept in step with the advancement of
+      technology or the evolving best-practices of science.
+    </p>
+    <p>
+      Traditionally, authoring of manuscripts takes place in a closed manner.
+      While most scientific material is eventually distributed to some kind of
+      public medium, the process of developing and reviewing the material is
+      usually done in private, contained to a handful of individuals. The tools
+      used are often outmoded, restrictive, and overall poorly-suited for the
+      task of collaborative, scientific writing. The time it takes to review and
+      publish can be
+      <a
+        href="https://www.nature.com/news/does-it-take-too-long-to-publish-research-1.19320"
+        >unreasonably long</a
+      >.
+    </p>
+    <p>
+      We believe that this process is antiquated and must be reformed. Good
+      science depends upon many things that the conventional approach doesn't
+      provide: A diversity of input and perspectives. Spontaneous and
+      cross-discipline contributions. Organic and wide-spread discovery and
+      dissemination of knowledge. The fostering of a free, global information
+      commons. A method of real-time, continuous science, performed entirely in
+      the open.
+    </p>
+    <p>
+      Current technology easily affords huge advantages over the old way of
+      doing things, both in convenience and in the quality of the result.
+      Manubot is a solution to the past and a push towards a future ideal, where
+      scientific writing is transparent, reproducible, immediate,
+      permissionless, versioned, automated, collaborative, open, linked,
+      provenanced, decentralized, hackable, interactive, annotated, and free of
+      charge.
+    </p>
+  </div>
+</section>
+<section id="cite-manubot">
+  <h3>
+    Cite Manubot
+  </h3>
+  <div class="row">
+    <p>
+      To reference the Manubot project, you can cite the following software
+      paper (AKA the "Meta Review") describing the functionality and benefits of
+      Manubot:
+    </p>
+  </div>
+  <div class="row">
+    <div class="banner_box">
+      <b>Open collaborative writing with Manubot</b><br />
+      Daniel S. Himmelstein, Vincent Rubinetti, David R. Slochower, Dongbo Hu,
+      Venkat S. Malladi, Casey S. Greene, Anthony Gitter<br />
+      <i>PLOS Computational Biology</i> (2019-06-24)
+      <a href="https://doi.org/c7np">https://doi.org/c7np</a><br />
+      DOI:
+      <a href="https://doi.org/10.1371/journal.pcbi.1007128"
+        >10.1371/journal.pcbi.1007128</a
+      >
+      · PMID:
+      <a href="https://www.ncbi.nlm.nih.gov/pubmed/31233491">31233491</a>
+    </div>
+    <p>
+      Take a look at the
+      <a href="https://greenelab.github.io/meta-review/"
+        >Manubot version of the paper</a
+      >
+      and its
+      <a href="https://github.com/greenelab/meta-review">source code</a>.
+    </p>
+  </div>
+</section>
+<section id="acknowledgements">
+  <h3>
+    Acknowledgements
+  </h3>
+  <div class="row">
+    <figure>
+      <a href="https://sloan.org/"
+        ><img src="images/alfred-p-sloan-foundation.png" height="60px"
+      /></a>
+      <figcaption>
+        <a href="https://sloan.org/grant-detail/8501">Grant G-2018-11163</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <a href="https://www.moore.org/"
+        ><img src="images/gordon-betty-moore-foundation.png" height="60px"
+      /></a>
+      <figcaption>
+        <a href="https://www.moore.org/grant-detail?grantId=GBMF4552"
+          >Grant GBMF4552</a
+        >
+      </figcaption>
+    </figure>
+  </div>
+  <div class="row">
+    <figure>
+      <a href="https://github.com/dhimmel"
+        ><img
+          src="images/daniel-himmelstein.png"
+          class="acknowledgement_image"
+          height="170px"
+      /></a>
+      <figcaption>
+        <span class="semibold">Daniel Himmelstein</span><br />
+        <a href="http://www.greenelab.com/">Greene Lab</a><br />
+        <a href="https://www.upenn.edu/">Univ. of Pennsylvania</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <a href="https://github.com/agitter"
+        ><img
+          src="images/anthony-gitter.png"
+          class="acknowledgement_image"
+          height="170px"
+      /></a>
+      <figcaption>
+        <span class="semibold">Anthony Gitter</span><br />
+        <a href="https://morgridge.org/research/virology/gitter-lab/"
+          >Morgridge Institute</a
+        ><br />
+        <a href="https://www.biostat.wisc.edu/~gitter/"
+          >Univ. of Wisconsin-Madison</a
+        >
+      </figcaption>
+    </figure>
+  </div>
+  <div class="row">
+    <p>
+      As an open source project, Manubot relies on a community of maintainers,
+      contributors, and users. For a list of all the individuals who have made
+      Manubot possible, see
+      <a href="https://github.com/manubot/rootstock/graphs/contributors"
+        >the contributors on GitHub</a
+      >
+      and
+      <a href="https://greenelab.github.io/meta-review/"
+        >the authors and acknowledgements here</a
+      >.
+    </p>
+  </div>
+</section>
+<script src="slideshow.js"></script>

@@ -1,37 +1,145 @@
-<html>
-  <head>
-    <title>
-      Manubot - Docs
-    </title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Quicksand"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Inconsolata"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../styles.css" />
-    <link rel="stylesheet" type="text/css" href="../coming-soon.css" />
-  </head>
-  <body>
-    <div>
-      <h2>Coming Soon</h2>
-      <i class="fas fa-drafting-compass fa-lg"></i><br>
-      <br>
+---
+layout: default
+title: Manubot Catalog
+logo: catalog-logo.svg
+header: Manubot
+subheader: CATALOG
+---
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+<section>
+  <div class="row">
+    <p>
+      Here is a list of manuscripts that have been created with Manubot. Click
+      on a thumbnail to view the interactive web version of the paper. Or use
+      the other buttons to view the journal, preprint, pdf, and other versions.
+      Note that some of these manuscripts are still works-in-progress.
+    </p>
+    <p>
+      Don't see your manuscript here? Is a manuscript missing a preprint or
+      journal link?
+      <a href="https://github.com/manubot/catalog"
+        >Suggest an addition or change to the catalog here</a
+      >.
+    </p>
+  </div>
+  <script>
+    function filter() {
+      // get search inputs
+      const searchText = document.getElementById('search_textbox').value;
+      const filterJournal = document.getElementById('journal_checkbox').checked;
+      const filterPreprint = document.getElementById('preprint_checkbox')
+        .checked;
+
+      // loop through cards
+      const cards = document.querySelectorAll('.catalog_card');
+      for (const card of cards) {
+        // get if card matches search text
+        const info = card.querySelector('.catalog_card_info');
+        const matchesSearch = info.innerText
+          .toLowerCase()
+          .indexOf(searchText.toLowerCase());
+
+        // get if card matches checkboxes
+        const links = card.querySelectorAll('.catalog_card_links > a');
+        const matchesJournal = links[0].getAttribute('href').trim() !== '';
+        const matchesPreprint = links[1].getAttribute('href').trim() !== '';
+
+        // display or hide accordingly
+        if (
+          (searchText && matchesSearch === -1) ||
+          (filterJournal && !matchesJournal) ||
+          (filterPreprint && !matchesPreprint)
+        )
+          card.style.display = 'none';
+        else card.style.display = 'flex';
+      }
+
+      // highlight text matching search
+      for (const card of cards) {
+        const info = card.querySelector('.catalog_card_info');
+        new Mark(info).unmark();
+        new Mark(info, { accuracy: 'complementary' }).mark(searchText.trim());
+      }
+    }
+  </script>
+  <div class="row">
+    <form>
+      <label for="search_textbox">search</label>
+      <input
+        id="search_textbox"
+        name="search_textbox"
+        oninput="filter()"
+        type="text"
+      />
+      <div class="checkboxes">
+        <input
+          id="journal_checkbox"
+          name="journal_checkbox"
+          oninput="filter()"
+          type="checkbox"
+        />
+        <label for="journal_checkbox">in journal</label>
+        <input
+          id="preprint_checkbox"
+          name="preprint_checkbox"
+          oninput="filter()"
+          type="checkbox"
+        />
+        <label for="preprint_checkbox">has preprint</label>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <small><i>(sorted by most recently updated)</i></small>
+  </div>
+  {% assign papers = site.data.catalog | sort:"manubot.date_iso" | reverse %} {%
+  for paper in papers %}
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="{{ paper.manubot.url }}"
+    >
+      <img
+        src="{% if paper.manubot.thumbnail_url %}{{
+          paper.manubot.thumbnail_url
+        }}{% else %}thumbnail.png{% endif %}"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
       <div>
-        We are still in the process of gathering and presenting a complete list of papers written with Manubot.
-        In the meantime, please take a look at the <a href="..#made-with-manubot">list of notable Manubot papers</a> on the main page.
+        {{ paper.manubot.title | truncate: 150 }}
+      </div>
+      <div>
+        {{ paper.manubot.authors }}
+      </div>
+      <div>
+        {{ paper.manubot.date_human }}
       </div>
     </div>
-  </body>
-</html>
+    <div class="catalog_card_links">
+      <a
+        href="{{ paper.journal.url }}"
+        title="Journal version of the paper{% if paper.journal.journal %}, published in {{
+          paper.journal.journal
+        }}{% endif %}"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href="{{ paper.preprint.url }}"
+        title="Preprint version of the paper{% if paper.preprint.journal %}, published in {{
+          paper.preprint.journal
+        }}{% endif %}"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="{{ paper.manubot.repo_url }}"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  {% endfor %}
+</section>
