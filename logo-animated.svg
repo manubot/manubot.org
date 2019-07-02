@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 192 1024 640">
+  <style>
+    .the_m {
+      animation: draw_m 1s ease forwards;
+    }
+    .bracket {
+      animation: draw_brackets 1s ease forwards;
+    }
+    .line {
+      animation: draw_lines 1s ease forwards;
+    }
+    .circle {
+      animation: draw_circles 1s ease forwards;
+    }
+    @keyframes draw_m {
+      from {
+        stroke-dasharray: 948;
+        stroke-dashoffset: 948;
+      }
+      to {
+        stroke-dasharray: 948;
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes draw_brackets {
+      from {
+        stroke-dasharray: 573;
+        stroke-dashoffset: 573;
+      }
+      to {
+        stroke-dasharray: 573;
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes draw_lines {
+      0% {
+        stroke-dasharray: 32;
+        stroke-dashoffset: 32;
+      }
+      50% {
+        stroke-dasharray: 32;
+        stroke-dashoffset: 32;
+      }
+      100% {
+        stroke-dasharray: 32;
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes draw_circles {
+      0% {
+        stroke-width: 0;
+      }
+      50% {
+        stroke-width: 0;
+      }
+      100% {
+        stroke-width: 32px;
+      }
+    }
+  </style>
+  <path
+    class="the_m"
+    fill="none"
+    stroke="#ffffff"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="48"
+    d="
+      M 384 640 
+      L 384 384
+      L 512 560
+      L 640 384
+      L 640 640
+    "
+  />
+  <path
+    class="bracket"
+    fill="none"
+    stroke="#ffffff"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="48"
+    d="
+      M 304 256
+      L 176 512 
+      L 304 768
+    "
+  />
+  <path
+    class="bracket"
+    fill="none"
+    stroke="#ffffff"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="48"
+    d="
+      M 720 768
+      L 848 512
+      L 720 256 
+    "
+  />
+  <path
+    class="line"
+    fill="none"
+    stroke="#ffffff"
+    stroke-linecap="round"
+    stroke-width="48"
+    d="
+      M 176 512
+      L 144 512
+    "
+  />
+  <path
+    class="line"
+    fill="none"
+    stroke="#ffffff"
+    stroke-linecap="round"
+    stroke-width="48"
+    d="
+      M 848 512
+      L 880 512
+    "
+  />
+  <circle
+    class="circle"
+    cx="56"
+    cy="512"
+    r="32"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="32"
+  />
+  <circle
+    class="circle"
+    cx="968"
+    cy="512"
+    r="32"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="32"
+  />
+</svg>

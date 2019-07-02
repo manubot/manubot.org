@@ -1,0 +1,1066 @@
+<html>
+  <head>
+    <title>Manubot Catalog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- metatags - https://metatags.io/ -->
+    <meta name="title" content="Manubot Catalog" />
+    <meta name="description" content="" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manubot.org" />
+    <meta property="og:title" content="Manubot Catalog" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="/share-thumbnail.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://manubot.org" />
+    <meta property="twitter:title" content="Manubot Catalog" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="/share-thumbnail.png" />
+
+    <!-- favicons - https://realfavicongenerator.net/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon-192x192.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ad1457" />
+    <meta name="msapplication-TileColor" content="#ad1457" />
+    <meta name="theme-color" content="#ad1457" />
+
+    <!-- keywords -->
+    <meta name="keywords" content="" />
+
+    <!-- global styles -->
+    <link href="/global.css" rel="stylesheet" />
+
+    <!-- page styles -->
+    <link href="page.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <div class="logo_container">
+          <img class="logo logo_shadow" src="catalog-logo.svg" />
+          <img class="logo" src="catalog-logo.svg" />
+        </div>
+      </a>
+      <a href="/">
+        <h1>
+          Manubot
+        </h1>
+      </a>
+      <h2>CATALOG<span class="cursor_blink">|</span></h2>
+    </header>
+    <main>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+<section>
+  <div class="row">
+    <p>
+      Here is a list of manuscripts that have been created with Manubot. Click
+      on a thumbnail to view the interactive web version of the paper. Or use
+      the other buttons to view the journal, preprint, pdf, and other versions.
+      Note that some of these manuscripts are still works-in-progress.
+    </p>
+    <p>
+      Don't see your manuscript here? Is a manuscript missing a preprint or
+      journal link?
+      <a href="https://github.com/manubot/catalog"
+        >Suggest an addition or change to the catalog here</a
+      >.
+    </p>
+  </div>
+  <script>
+    function filter() {
+      // get search inputs
+      const searchText = document.getElementById('search_textbox').value;
+      const filterJournal = document.getElementById('journal_checkbox').checked;
+      const filterPreprint = document.getElementById('preprint_checkbox')
+        .checked;
+
+      // loop through cards
+      const cards = document.querySelectorAll('.catalog_card');
+      for (const card of cards) {
+        // get if card matches search text
+        const info = card.querySelector('.catalog_card_info');
+        const matchesSearch = info.innerText
+          .toLowerCase()
+          .indexOf(searchText.toLowerCase());
+
+        // get if card matches checkboxes
+        const links = card.querySelectorAll('.catalog_card_links > a');
+        const matchesJournal = links[0].getAttribute('href').trim() !== '';
+        const matchesPreprint = links[1].getAttribute('href').trim() !== '';
+
+        // display or hide accordingly
+        if (
+          (searchText && matchesSearch === -1) ||
+          (filterJournal && !matchesJournal) ||
+          (filterPreprint && !matchesPreprint)
+        )
+          card.style.display = 'none';
+        else card.style.display = 'flex';
+      }
+
+      // highlight text matching search
+      for (const card of cards) {
+        const info = card.querySelector('.catalog_card_info');
+        new Mark(info).unmark();
+        new Mark(info, { accuracy: 'complementary' }).mark(searchText.trim());
+      }
+    }
+  </script>
+  <div class="row">
+    <form>
+      <label for="search_textbox">search</label>
+      <input
+        id="search_textbox"
+        name="search_textbox"
+        oninput="filter()"
+        type="text"
+      />
+      <div class="checkboxes">
+        <input
+          id="journal_checkbox"
+          name="journal_checkbox"
+          oninput="filter()"
+          type="checkbox"
+        />
+        <label for="journal_checkbox">in journal</label>
+        <input
+          id="preprint_checkbox"
+          name="preprint_checkbox"
+          oninput="filter()"
+          type="checkbox"
+        />
+        <label for="preprint_checkbox">has preprint</label>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <small><i>(sorted by most recently updated)</i></small>
+  </div>
+   
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://openclimatedata.github.io/global-emissions/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/emissions.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Global Emissions Timeseries
+      </div>
+      <div>
+        Gieseke, Gütschow, Nicholls
+      </div>
+      <div>
+        Jul 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/openclimatedata/global-emissions"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://benjamin-lee.github.io/deep-rules/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/deep-tips.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Ten Quick Tips for Deep Learning in Biology
+      </div>
+      <div>
+        Lee, Titus, Yu, Chevrette, Stewart, Cofer, Raschka, Maguire, Lengerich, Kalinin, Gitter, Greene, et al
+      </div>
+      <div>
+        Jul 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/Benjamin-Lee/deep-rules"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://dhimmel.github.io/rephetio-manuscript/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/rephetio.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Systematic integration of biomedical knowledge prioritizes drugs for repurposing
+      </div>
+      <div>
+        Himmelstein, Lizee, Hessler, Brueggeman, L. Chen, Hadley, Green, Khankhanian, E. Baranzini
+      </div>
+      <div>
+        Jul 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href="https://doi.org/cdfk"
+        title="Journal version of the paper, published in eLife"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href="https://doi.org/bs4f"
+        title="Preprint version of the paper, published in Cold Spring Harbor Laboratory"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/dhimmel/rephetio-manuscript/"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://yt-project.github.io/yt-3.0-paper/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Introducing yt 3.0: Analysis and Visualization of Volumetric Data
+      </div>
+      <div>
+        Project, Turk, Goldbaum, ZuHone, Hummels, Ji, Yourself
+      </div>
+      <div>
+        Jun 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/yt-project/yt-3.0-paper"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://slochower.github.io/smirnoff-host-guest-manuscript/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/smirnoff.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Binding thermodynamics of host-guest systems with SMIRNOFF99Frosst 1.0.5 from the Open Force Field Initiative
+      </div>
+      <div>
+        Slochower, Henriksen, Wang, Chodera, Mobley, Gilson
+      </div>
+      <div>
+        Jun 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/slochower/smirnoff-host-guest-manuscript"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://manubot.github.io/try-manubot/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Manuscript Title
+      </div>
+      <div>
+        Doe, Roe
+      </div>
+      <div>
+        Jun 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/manubot/try-manubot"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://jmonlong.github.io/manu-vgsv/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/pangenome.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Genotyping structural variants in pangenome graphs using the vg toolkit
+      </div>
+      <div>
+        Hickey, Heller, Monlong, Sibbesen, Siren, Eizenga, Dawson, Garrison, Novak, Paten
+      </div>
+      <div>
+        Jun 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href="https://doi.org/gf3jfm"
+        title="Preprint version of the paper, published in Cold Spring Harbor Laboratory"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/jmonlong/manu-vgsv"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://greenelab.github.io/meta-review/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/meta-review.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Open collaborative writing with Manubot
+      </div>
+      <div>
+        Himmelstein, Rubinetti, Slochower, Hu, Malladi, Greene, Gitter
+      </div>
+      <div>
+        Jun 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href="https://doi.org/c7np"
+        title="Journal version of the paper, published in PLOS Computational Biology"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/greenelab/meta-review"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://greenelab.github.io/deep-review/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/deep-review.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Opportunities and obstacles for deep learning in biology and medicine: 2019 update
+      </div>
+      <div>
+        Ching, Himmelstein, Beaulieu-Jones, Kalinin, Do, Way, Ferrero, Agapow, Zietz, Hoffman, Xie, Rosen, et al
+      </div>
+      <div>
+        Jun 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href="https://doi.org/gddkhn"
+        title="Journal version of the paper, published in Journal of The Royal Society Interface"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href="https://doi.org/gbpvh5"
+        title="Preprint version of the paper, published in Cold Spring Harbor Laboratory"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/greenelab/deep-review"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://trang1618.github.io/tpot-fss-ms/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/tpot.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Scaling tree-based automated machine learning to biomedical big data with a feature set selector
+      </div>
+      <div>
+        Le, Fu, Moore
+      </div>
+      <div>
+        Jun 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href="https://doi.org/gf3tds"
+        title="Journal version of the paper, published in Bioinformatics"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href="https://doi.org/gf3jfk"
+        title="Preprint version of the paper, published in Cold Spring Harbor Laboratory"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/trang1618/tpot-fss-ms"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://laurentperrinet.github.io/2019-05_illusions-visuelles/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/smirnoff.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Des illusions visuelles aux hallucinations: une porte sur la perception
+      </div>
+      <div>
+        Perrinet
+      </div>
+      <div>
+        Jun 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href="http://theconversation.com/illusions-et-hallucinations-visuelles-une-porte-sur-la-perception-117389"
+        title="Journal version of the paper, published in The Conversation"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/laurentperrinet/2019-05_illusions-visuelles"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://simonvh.github.io/gimmemotifs-manuscript/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/gimmemotifs.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        GimmeMotifs: an analysis framework for transcription factor motif analysis
+      </div>
+      <div>
+        Bruse, Heeringen
+      </div>
+      <div>
+        May 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href="https://doi.org/gfxrkc"
+        title="Preprint version of the paper, published in Cold Spring Harbor Laboratory"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/simonvh/gimmemotifs-manuscript"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://zach-hensel.github.io/low-noise-manuscript/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Plasmids for independently tunable, low-noise expression of two genes
+      </div>
+      <div>
+        Silva, Lopes, Grilo, Hensel
+      </div>
+      <div>
+        May 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href="https://doi.org/gf3vhf"
+        title="Journal version of the paper, published in mSphere"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href="https://doi.org/gfs47c"
+        title="Preprint version of the paper, published in Cold Spring Harbor Laboratory"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/zach-hensel/low-noise-manuscript"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://indigo-dc.github.io/sqa-baseline/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        A set of Common Software Quality Assurance Baseline Criteria for Research Projects
+      </div>
+      <div>
+        Orviz, Lopez, Duma, David, Gomes, Donvito
+      </div>
+      <div>
+        Apr 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/indigo-dc/sqa-baseline"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://git.dhimmel.com/psb-manuscript/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        The people of the 24ᵗʰ annual Pacific Symposium on Biocomputing in Hawaii
+      </div>
+      <div>
+        Byrd, Fu, Greene, Himmelstein, Hu, Hunter, Jain, Kurkiewicz, Le, Li, Miller, Pinello, Ramola, Taroni, et al
+      </div>
+      <div>
+        Mar 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/dhimmel/psb-manuscript"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://dhimmel.github.io/bitcoin-whitepaper/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Bitcoin: A Peer-to-Peer Electronic Cash System
+      </div>
+      <div>
+        Nakamoto
+      </div>
+      <div>
+        Mar 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/dhimmel/bitcoin-whitepaper/"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://greenelab.github.io/scihub-manuscript/"
+    >
+      <img
+        src="https://github.com/manubot/manubot.org/raw/a723bbe27fcbaf5fe2ce05233b74a8c8d3d27e86/images/scihub.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Sci-Hub provides access to nearly all scholarly literature
+      </div>
+      <div>
+        Himmelstein, Romero, Levernier, Munro, McLaughlin, Tzovaras, Greene
+      </div>
+      <div>
+        Mar 2019
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href="https://doi.org/ckcj"
+        title="Journal version of the paper, published in eLife"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href="https://doi.org/b9s5"
+        title="Preprint version of the paper, published in PeerJ"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/greenelab/scihub-manuscript"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://zietzm.github.io/integration-review/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Network Methods for Multiomic Data Integration
+      </div>
+      <div>
+        Zietz
+      </div>
+      <div>
+        Dec 2018
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/zietzm/integration-review"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://vsmalladi.github.io/tfsee-manuscript/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Total Functional Score of Enhancer Elements Identifies Lineage-Specific Enhancers that Drive Differentiation of Pancreatic Cells
+      </div>
+      <div>
+        Malladi, Nagari, Franco, Kraus
+      </div>
+      <div>
+        Oct 2018
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/vsmalladi/tfsee-manuscript"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://greenelab.github.io/czi-hca-report/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Progress Report: Genome-wide hypothesis generation for single-cell expression via latent spaces of deep neural networks
+      </div>
+      <div>
+        Hu, Greene
+      </div>
+      <div>
+        Aug 2018
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/greenelab/czi-hca-report"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://greenelab.github.io/manufund-2018/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Manubot 2018 development proposal
+      </div>
+      <div>
+        Himmelstein, Greene
+      </div>
+      <div>
+        Dec 2017
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href=""
+        title="Preprint version of the paper"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/greenelab/manufund-2018"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+  <div class="catalog_card">
+    <a
+      class="catalog_card_thumbnail"
+      title="Interactive web version of the paper"
+      href="https://zietzm.github.io/Vagelos2017/"
+    >
+      <img
+        src="thumbnail.png"
+      />
+      <div><i class="fas fa-globe fa-fw"></i></div>
+    </a>
+    <div class="catalog_card_info">
+      <div>
+        Vagelos Report Summer 2017
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+    <div class="catalog_card_links">
+      <a
+        href=""
+        title="Journal version of the paper"
+        ><span>journal</span><i class="fas fa-newspaper fa-fw"></i
+      ></a>
+      <a
+        href="https://doi.org/gbr3pf"
+        title="Preprint version of the paper, published in Figshare"
+        ><span>preprint</span><i class="fas fa-eye fa-fw"></i
+      ></a>
+      <a
+        href="https://github.com/zietzm/Vagelos2017"
+        title="Repository (source code) for the paper. Contains the input markdown, as well as other outputs like PDF."
+        ><span>source</span><i class="fab fa-github fa-fw"></i
+      ></a>
+    </div>
+  </div>
+  
+</section>
+
+    </main>
+    <footer>
+  <a href="https://github.com/manubot">
+    <i class="fab fa-lg fa-github"></i>
+  </a>
+  <a href="https://twitter.com/search?q=%23Manubot">
+    <i class="fab fa-lg fa-twitter"></i>
+  </a>
+  <a href="mailto:contact@manubot.org" style="margin-left: 10px;"
+    >contact@manubot.org</a
+  >
+</footer>
+
+  </body>
+</html>
