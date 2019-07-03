@@ -168,6 +168,9 @@ footer a,
 footer a:hover {
   color: #f8f8f8;
 }
+footer a:last-child {
+  margin: 0 10px;
+}
 header,
 main,
 footer {
