@@ -12,7 +12,7 @@ set -o errexit \
 eval "$(ssh-agent -s)"
 # Ensure command traces are disabled while dealing with the private key
 set +o xtrace
-base64 --decode <<< $TRAVIS_BASE64_SSH_PRIVATE_KEY | ssh-add -
+base64 --decode <<< $TRAVIS_BASE64_SSH_PRIVATE_KEY | ssh-add
 set -o xtrace
 
 # Configure git
