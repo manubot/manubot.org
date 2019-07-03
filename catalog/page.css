@@ -182,6 +182,7 @@ mark {
   }
   .catalog_card_links {
     width: 100%;
+    height: unset;
     border-left: none;
     border-top: solid 1px #e0e0e0;
   }
