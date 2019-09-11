@@ -29,13 +29,13 @@ body {
   color: #424242;
 }
 h1 {
-  margin: 5px;
+  margin: 0;
+  margin-bottom: 10px;
   font-family: 'Quicksand', sans-serif;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 400;
   letter-spacing: 2px;
   text-align: center;
-  text-shadow: 0 3.5px rgba(0, 0, 0, 0.15);
 }
 h2 {
   font-size: 20px;
@@ -45,7 +45,6 @@ h2 {
   margin: 0;
   padding: 0 5px;
   background: rgba(0, 0, 0, 0.15);
-  text-shadow: 0 1.5px rgba(0, 0, 0, 0.15);
 }
 h3 {
   display: flex;
@@ -134,7 +133,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 65px;
   background: #ad1457;
   box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -220,21 +219,11 @@ footer {
 /* -------------------------------------------------- */
 /* header styles */
 /* -------------------------------------------------- */
-.logo_container {
-  box-sizing: border-box;
-  height: 100px;
-  position: relative;
-}
 .logo {
-  left: 50%;
-  height: 100%;
-  position: absolute;
-  transform: translateX(-50%);
+  width: 80px;
 }
-.logo_shadow {
-  opacity: 0.15;
-  filter: brightness(0%);
-  top: 6.5px;
+.logo[src="logo.svg"] {
+  width: 175px;
 }
 .cursor_blink {
   position: relative;
