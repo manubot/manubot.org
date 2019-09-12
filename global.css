@@ -222,7 +222,7 @@ footer {
 .logo {
   width: 80px;
 }
-.logo[src="logo.svg"] {
+.logo[src='logo.svg'] {
   width: 175px;
 }
 .cursor_blink {
