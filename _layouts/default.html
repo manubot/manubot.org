@@ -11,13 +11,13 @@
     <meta property="og:url" content="https://manubot.org" />
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="og:description" content="{{ page.description }}" />
-    <meta property="og:image" content="/share-thumbnail.png" />
+    <meta property="og:image" content="share-thumbnail.png" />
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://manubot.org" />
     <meta property="twitter:title" content="{{ page.title }}" />
     <meta property="twitter:description" content="{{ page.description }}" />
-    <meta property="twitter:image" content="/share-thumbnail.png" />
+    <meta property="twitter:image" content="share-thumbnail.png" />
 
     <!-- favicons - https://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -44,10 +44,7 @@
   <body>
     <header>
       <a href="/">
-        <div class="logo_container">
-          <img class="logo logo_shadow" src="{{ page.logo }}" />
-          <img class="logo" src="{{ page.logo }}" />
-        </div>
+        <img class="logo" src="{{ page.logo }}" />
       </a>
       <a href="/">
         <h1>
@@ -60,5 +57,35 @@
       {{ content }}
     </main>
     {% include footer.html %}
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u = 'https://piwik.dhimmel.com/';
+        _paq.push(['setTrackerUrl', u + 'matomo.php']);
+        _paq.push(['setSiteId', '9']);
+        var d = document,
+          g = d.createElement('script'),
+          s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'matomo.js';
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
+    <noscript
+      ><p>
+        <img
+          src="https://piwik.dhimmel.com/matomo.php?idsite=9&amp;rec=1"
+          style="border:0;"
+          alt=""
+        /></p
+    ></noscript>
+    <!-- End Matomo Code -->
   </body>
 </html>
