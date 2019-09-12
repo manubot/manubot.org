@@ -1,83 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-  <path
-    class="the_m"
-    fill="none"
-    stroke="#ffffff"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="48"
-    d="
-      M 384 640 
-      L 384 384
-      L 512 560
-      L 640 384
-      L 640 640
-    "
-  />
-  <path
-    class="bracket"
-    fill="none"
-    stroke="#ffffff"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="48"
-    d="
-      M 304 256
-      L 176 512 
-      L 304 768
-    "
-  />
-  <path
-    class="bracket"
-    fill="none"
-    stroke="#ffffff"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="48"
-    d="
-      M 720 768
-      L 848 512
-      L 720 256 
-    "
-  />
-  <path
-    class="line"
-    fill="none"
-    stroke="#ffffff"
-    stroke-linecap="round"
-    stroke-width="48"
-    d="
-      M 176 512
-      L 144 512
-    "
-  />
-  <path
-    class="line"
-    fill="none"
-    stroke="#ffffff"
-    stroke-linecap="round"
-    stroke-width="48"
-    d="
-      M 848 512
-      L 880 512
-    "
-  />
-  <circle
-    class="circle"
-    cx="56"
-    cy="512"
-    r="32"
-    fill="none"
-    stroke="#ffffff"
-    stroke-width="32"
-  />
-  <circle
-    class="circle"
-    cx="968"
-    cy="512"
-    r="32"
-    fill="none"
-    stroke="#ffffff"
-    stroke-width="32"
-  />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-500 -500 1000 1000">
+  <!-- logo -->
+  <g transform="scale(0.9)">
+    <!-- M -->
+    <path
+      class="letter"
+      fill="none"
+      stroke="black"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="50"
+      d="
+        M -125 125 
+        L -125 -125
+        L 0 45
+        L 125 -125
+        L 125 125
+      "
+    />
+    <!-- left bracket -->
+    <path
+      class="bracket"
+      fill="none"
+      stroke="black"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="50"
+      d="
+        M -200 -250
+        L -330 0 
+        L -200 250
+      "
+    />
+    <!-- right bracket -->
+    <path
+      class="bracket"
+      fill="none"
+      stroke="black"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="50"
+      d="
+        m 200 250 
+        L 330 0
+        L 200 -250
+      "
+    />
+    <!-- left line -->
+    <path
+      class="line"
+      fill="none"
+      stroke="black"
+      stroke-linecap="round"
+      stroke-width="50"
+      d="
+        M -330 0
+        L -370 0
+      "
+    />
+    <!-- right line -->
+    <path
+      class="line"
+      fill="none"
+      stroke="black"
+      stroke-linecap="round"
+      stroke-width="50"
+      d="
+        M 330 0
+        L 370 0
+      "
+    />
+    <!-- left circle -->
+    <circle
+      class="circle"
+      cx="-455"
+      cy="0"
+      r="30"
+      fill="none"
+      stroke="black"
+      stroke-width="30"
+    />
+    <!-- right circle -->
+    <circle
+      class="circle"
+      cx="455"
+      cy="0"
+      r="30"
+      fill="none"
+      stroke="black"
+      stroke-width="30"
+    />
+  </g>
 </svg>
