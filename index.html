@@ -163,27 +163,42 @@ subheader: Manuscripts, open and automated.
     Made With Manubot
   </h3>
   <div class="row">
-    {% assign thumbnails = site.data.catalog | sort: "manubot.date_iso" |
-    reverse | map: "manubot" | map: "thumbnail_url" | compact %}
+    {% assign papers = site.data.catalog | sort: "manubot.date_iso" | reverse %}
     <div class="catalog_tile slideshow">
-      {% for thumbnail in thumbnails %} {% assign index = forloop.index |
-      modulo: 4 %} {% if index == 0 %}
-      <img data-src="{{ thumbnail }}" /> {% endif %}{% endfor %}
+      {% for paper in papers %} {% assign index = forloop.index | modulo: 4 %}
+      {% if index == 0 and paper.manubot.thumbnail_url %}
+      <img
+        data-src="{{ paper.manubot.thumbnail_url }}"
+        title="{{ paper.manubot.title }}"
+      />
+      {% endif %}{% endfor %}
     </div>
     <div class="catalog_tile slideshow">
-      {% for thumbnail in thumbnails %} {% assign index = forloop.index |
-      modulo: 4 %} {% if index == 1 %}
-      <img data-src="{{ thumbnail }}" /> {% endif %}{% endfor %}
+      {% for paper in papers %}{% assign index = forloop.index | modulo: 4 %} {%
+      if index == 1 and paper.manubot.thumbnail_url %}
+      <img
+        data-src="{{ paper.manubot.thumbnail_url }}"
+        title="{{ paper.manubot.title }}"
+      />
+      {% endif %}{% endfor %}
     </div>
     <div class="catalog_tile slideshow">
-      {% for thumbnail in thumbnails %} {% assign index = forloop.index |
-      modulo: 4 %} {% if index == 2 %}
-      <img data-src="{{ thumbnail }}" /> {% endif %}{% endfor %}
+      {% for paper in papers %} {% assign index = forloop.index | modulo: 4 %}
+      {% if index == 2 and paper.manubot.thumbnail_url %}
+      <img
+        data-src="{{ paper.manubot.thumbnail_url }}"
+        title="{{ paper.manubot.title }}"
+      />
+      {% endif %}{% endfor %}
     </div>
     <div class="catalog_tile slideshow">
-      {% for thumbnail in thumbnails %} {% assign index = forloop.index |
-      modulo: 4 %} {% if index == 3 %}
-      <img data-src="{{ thumbnail }}" /> {% endif %}{% endfor %}
+      {% for paper in papers %} {% assign index = forloop.index | modulo: 4 %}
+      {% if index == 3 and paper.manubot.thumbnail_url %}
+      <img
+        data-src="{{ paper.manubot.thumbnail_url }}"
+        title="{{ paper.manubot.title }}"
+      />
+      {% endif %}{% endfor %}
     </div>
   </div>
   <div class="row">
