@@ -163,119 +163,32 @@ subheader: Manuscripts, open and automated.
     Made With Manubot
   </h3>
   <div class="row">
-    <a
-      href="https://slochower.github.io/smirnoff-host-guest-manuscript/"
-      class="gallery_image"
-    >
-      <img src="images/smirnoff.png" />
-      <div>
-        <b
-          >Binding thermodynamics of host-guest systems with SMIRNOFF99Frosst
-          1.0.5 from the Open Force Field Initiative</b
-        >
-        <i>D. Slochower, et al</i>
-      </div>
-    </a>
-    <a
-      href="https://laurentperrinet.github.io/2019-05_illusions-visuelles/"
-      class="gallery_image"
-    >
-      <img src="images/illusions.png" />
-      <div>
-        <b
-          >Des illusions visuelles aux hallucinations: une porte sur la
-          perception</b
-        >
-        <i>L. Perrinet</i>
-      </div>
-    </a>
-    <a href="https://greenelab.github.io/deep-review/" class="gallery_image">
-      <img src="images/deep-review.png" />
-      <div>
-        <b
-          >Opportunities and obstacles for deep learning in biology and
-          medicine: 2019 update</b
-        >
-        <i>T. Ching, et al</i>
-      </div>
-    </a>
-    <a
-      href="https://git.dhimmel.com/rephetio-manuscript/"
-      class="gallery_image"
-    >
-      <img src="images/rephetio.png" />
-      <div>
-        <b
-          >Systematic integration of biomedical knowledge prioritizes drugs for
-          repurposing</b
-        >
-        <i>D. Himmelstein, et al</i>
-      </div>
-    </a>
-    <a href="https://trang1618.github.io/tpot-fss-ms/" class="gallery_image">
-      <img src="images/tpot.png" />
-      <div>
-        <b
-          >Scaling tree-based automated machine learning to biomedical big data
-          with a feature set selector</b
-        >
-        <i>T. Le, et al</i>
-      </div>
-    </a>
-    <a
-      href="https://greenelab.github.io/scihub-manuscript/"
-      class="gallery_image"
-    >
-      <img src="images/scihub.png" />
-      <div>
-        <b>Sci-Hub provides access to nearly all scholarly literature</b>
-        <i>D. Himmelstein, et al</i>
-      </div>
-    </a>
-    <a
-      href="https://openclimatedata.github.io/global-emissions/"
-      class="gallery_image"
-    >
-      <img src="images/emissions.png" />
-      <div>
-        <b>Global Emissions Timeseries</b>
-        <i>R. Gieseke, et al</i>
-      </div>
-    </a>
-    <a href="https://jmonlong.github.io/manu-vgsv/" class="gallery_image">
-      <img src="images/pangenome.png" />
-      <div>
-        <b
-          >Genotyping structural variants in pangenome graphs using the vg
-          toolkit</b
-        >
-        <i>J. Monlong, et al</i>
-      </div>
-    </a>
-    <a href="https://benjamin-lee.github.io/deep-rules/" class="gallery_image">
-      <img src="images/deep-tips.png" />
-      <div>
-        <b>Ten Quick Tips for Deep Learning in Biology</b>
-        <i>B. Lee, et al</i>
-      </div>
-    </a>
-    <a
-      href="https://simonvh.github.io/gimmemotifs-manuscript/"
-      class="gallery_image"
-    >
-      <img src="images/gimmemotifs.png" />
-      <div>
-        <b
-          >GimmeMotifs: an analysis framework for transcription factor motif
-          analysis</b
-        >
-        <i>S. Heeringen, et al</i>
-      </div>
-    </a>
+    {% assign thumbnails = site.data.catalog | sort: "manubot.date_iso" |
+    reverse | map: "manubot" | map: "thumbnail_url" | compact %}
+    <div class="catalog_tile slideshow">
+      {% for thumbnail in thumbnails %} {% assign index = forloop.index |
+      modulo: 4 %} {% if index == 0 %}
+      <img data-src="{{ thumbnail }}" /> {% endif %}{% endfor %}
+    </div>
+    <div class="catalog_tile slideshow">
+      {% for thumbnail in thumbnails %} {% assign index = forloop.index |
+      modulo: 4 %} {% if index == 1 %}
+      <img data-src="{{ thumbnail }}" /> {% endif %}{% endfor %}
+    </div>
+    <div class="catalog_tile slideshow">
+      {% for thumbnail in thumbnails %} {% assign index = forloop.index |
+      modulo: 4 %} {% if index == 2 %}
+      <img data-src="{{ thumbnail }}" /> {% endif %}{% endfor %}
+    </div>
+    <div class="catalog_tile slideshow">
+      {% for thumbnail in thumbnails %} {% assign index = forloop.index |
+      modulo: 4 %} {% if index == 3 %}
+      <img data-src="{{ thumbnail }}" /> {% endif %}{% endfor %}
+    </div>
   </div>
   <div class="row">
     <a href="/catalog" class="button_link">
-      <i class="fas fa-book-open fa-lg"></i> Full Catalog
+      <i class="fas fa-book-open fa-lg"></i> Catalog
     </a>
   </div>
 </section>
