@@ -14,8 +14,24 @@ function cycleSlideshow(slideshow) {
     const next = current ? current.nextElementSibling : undefined;
 
     for (const child of slideshow.children)
-        child.removeAttribute('data-active');
+        hideSlide(child);
 
-    if (next || first)
-        (next || first).setAttribute('data-active', '');
+    showSlide(next || first);
+}
+
+function showSlide(element) {
+    if (!element)
+        return;
+
+    element.setAttribute('data-active', '');
+    if (!element.src && element.dataset.src) {
+        element.src = element.dataset.src;
+    }
+}
+
+function hideSlide(element) {
+    if (!element)
+        return;
+
+    element.removeAttribute('data-active');
 }
