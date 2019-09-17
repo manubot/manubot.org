@@ -56,9 +56,9 @@ input[type='checkbox']:checked {
   max-width: 800px;
   margin: 30px auto;
   border-radius: 4px;
-  background: #f8f8f8;
+  background: #ffffff;
   overflow: hidden;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px 0 #00000020;
   z-index: 1;
 }
 .catalog_card_thumbnail {
@@ -78,25 +78,6 @@ input[type='checkbox']:checked {
 }
 .catalog_card_thumbnail:hover > img {
   transform: scale(1.25);
-}
-.catalog_card_thumbnail > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  width: 30px;
-  height: 30px;
-  background: rgba(255, 255, 255, 0.5);
-}
-.catalog_card_thumbnail > div > i {
-  margin: 0;
-}
-.catalog_card_thumbnail > div {
-  transition: opacity 0.25s ease;
-}
-.catalog_card_thumbnail:hover > div {
-  opacity: 0;
 }
 .catalog_card_info {
   box-sizing: border-box;
@@ -132,7 +113,7 @@ input[type='checkbox']:checked {
   width: 100%;
   height: 50px;
   padding: 0 20px;
-  color: #424242;
+  color: #202020;
   text-decoration: none;
   transition: background 0.1s ease;
 }
@@ -148,7 +129,7 @@ input[type='checkbox']:checked {
 }
 .catalog_card_links > a:hover > span,
 .catalog_card_links > a:hover > i {
-  color: #f8f8f8;
+  color: #ffffff;
 }
 .catalog_card_links > a[href=''],
 .catalog_card_links > a[href='']:hover {

@@ -17,7 +17,7 @@ body {
 }
 body {
   position: relative;
-  background: #f8f8f8;
+  background: #ffffff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@ body {
 }
 * {
   font-family: 'Source Sans Pro', sans-serif;
-  color: #424242;
+  color: #202020;
 }
 h1 {
   margin: 0;
@@ -44,7 +44,7 @@ h2 {
   text-align: center;
   margin: 0;
   padding: 0 5px;
-  background: rgba(0, 0, 0, 0.15);
+  background: #00000020;
 }
 h3 {
   display: flex;
@@ -69,7 +69,7 @@ h3:after {
   width: 100px;
   height: 2px;
   margin: 0 20px;
-  background: #424242;
+  background: #202020;
   vertical-align: middle;
   opacity: 0.25;
 }
@@ -112,7 +112,7 @@ figcaption {
   font-size: 0.85em;
 }
 code {
-  background: rgba(0, 0, 0, 0.05);
+  background: #00000020;
   padding: 0 3px;
   border-radius: 3px;
 }
@@ -135,22 +135,19 @@ header {
   align-items: center;
   padding: 65px;
   background: #ad1457;
-  box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 -10px 10px #00000020;
   position: relative;
 }
 header,
 header *,
 header a,
 header a:hover {
-  color: #f8f8f8;
+  color: #ffffff;
   text-decoration: none;
 }
 section {
   position: relative;
   padding: 30px 20px;
-}
-section:nth-child(even) {
-  background: #f4f4f4;
 }
 footer {
   display: flex;
@@ -159,13 +156,13 @@ footer {
   align-items: center;
   padding: 20px;
   background: #ad1457;
-  box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 10px 10px #00000020;
 }
 footer,
 footer *,
 footer a,
 footer a:hover {
-  color: #f8f8f8;
+  color: #ffffff;
 }
 footer a:last-child {
   margin: 0 10px;
@@ -253,7 +250,6 @@ footer {
   width: 170px;
   min-width: 170px;
   height: 50px;
-  background: #f8f8f8;
   color: #ad1457;
   font-weight: 600;
   margin: 5px;
@@ -268,10 +264,10 @@ footer {
 }
 .button_link:hover {
   background: #ad1457;
-  color: #f8f8f8;
+  color: #ffffff;
 }
 .button_link:hover * {
-  color: #f8f8f8;
+  color: #ffffff;
 }
 
 /* -------------------------------------------------- */
@@ -281,7 +277,7 @@ footer {
   font-weight: 600;
 }
 .banner_box {
-  background: #e8e8e8;
+  background: #f0f0f0;
   padding: 20px;
 }
 
@@ -293,17 +289,12 @@ footer {
 }
 .slideshow > * {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
   width: 100%;
+  height: 100%;
   opacity: 0;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px #00000020;
   transition: opacity 1s ease;
   z-index: 0;
-}
-.slideshow > *:first-child {
-  position: relative;
 }
 .slideshow > *[data-active] {
   opacity: 1;
