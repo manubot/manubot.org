@@ -88,7 +88,7 @@ subheader: Manuscripts, open and automated.
       </p>
     </div>
     <div class="col_image">
-      <div class="slideshow">
+      <div class="feature_tile slideshow">
         <img src="images/open-1.png" />
         <img src="images/open-2.png" />
         <img src="images/open-3.png" />
@@ -97,7 +97,7 @@ subheader: Manuscripts, open and automated.
   </div>
   <div class="row">
     <div class="col_image">
-      <div class="slideshow">
+      <div class="feature_tile slideshow">
         <img src="images/automated-1.png" />
         <img src="images/automated-2.png" />
         <img src="images/automated-3.png" />
@@ -130,7 +130,7 @@ subheader: Manuscripts, open and automated.
       </p>
     </div>
     <div class="col_image">
-      <div class="slideshow">
+      <div class="feature_tile slideshow">
         <img src="images/interactive-1.png" />
         <img src="images/interactive-2.png" />
         <img src="images/interactive-3.png" />
@@ -139,7 +139,7 @@ subheader: Manuscripts, open and automated.
   </div>
   <div class="row">
     <div class="col_image">
-      <div class="slideshow">
+      <div class="feature_tile slideshow">
         <img src="images/free-1.png" />
         <img src="images/free-2.png" />
         <img src="images/free-3.png" />
@@ -167,37 +167,69 @@ subheader: Manuscripts, open and automated.
     <div class="catalog_tile slideshow">
       {% for paper in papers %} {% assign index = forloop.index | modulo: 4 %}
       {% if index == 0 and paper.manubot.thumbnail_url %}
-      <img
-        data-src="{{ paper.manubot.thumbnail_url }}"
-        title="{{ paper.manubot.title }}"
-      />
+      <div class="catalog_tile_item">
+        <img
+          class="catalog_tile_image"
+          data-src="{{ paper.manubot.thumbnail_url }}"
+        />
+        <div class="catalog_tile_caption">
+          <a href="{{ paper.manubot.url }}">
+            <i class="fas fa-scroll fa-sm"></i
+            >{{ paper.manubot.title }}
+          </a>
+        </div>
+      </div>
       {% endif %}{% endfor %}
     </div>
     <div class="catalog_tile slideshow">
       {% for paper in papers %}{% assign index = forloop.index | modulo: 4 %} {%
       if index == 1 and paper.manubot.thumbnail_url %}
-      <img
-        data-src="{{ paper.manubot.thumbnail_url }}"
-        title="{{ paper.manubot.title }}"
-      />
+      <div class="catalog_tile_item">
+        <img
+          class="catalog_tile_image"
+          data-src="{{ paper.manubot.thumbnail_url }}"
+        />
+        <div class="catalog_tile_caption">
+          <a href="{{ paper.manubot.url }}">
+            <i class="fas fa-scroll fa-sm"></i
+            >{{ paper.manubot.title }}
+          </a>
+        </div>
+      </div>
       {% endif %}{% endfor %}
     </div>
     <div class="catalog_tile slideshow">
       {% for paper in papers %} {% assign index = forloop.index | modulo: 4 %}
       {% if index == 2 and paper.manubot.thumbnail_url %}
-      <img
-        data-src="{{ paper.manubot.thumbnail_url }}"
-        title="{{ paper.manubot.title }}"
-      />
+      <div class="catalog_tile_item">
+        <img
+          class="catalog_tile_image"
+          data-src="{{ paper.manubot.thumbnail_url }}"
+        />
+        <div class="catalog_tile_caption">
+          <a href="{{ paper.manubot.url }}">
+            <i class="fas fa-scroll fa-sm"></i
+            >{{ paper.manubot.title }}
+          </a>
+        </div>
+      </div>
       {% endif %}{% endfor %}
     </div>
     <div class="catalog_tile slideshow">
       {% for paper in papers %} {% assign index = forloop.index | modulo: 4 %}
       {% if index == 3 and paper.manubot.thumbnail_url %}
-      <img
-        data-src="{{ paper.manubot.thumbnail_url }}"
-        title="{{ paper.manubot.title }}"
-      />
+      <div class="catalog_tile_item">
+        <img
+          class="catalog_tile_image"
+          data-src="{{ paper.manubot.thumbnail_url }}"
+        />
+        <div class="catalog_tile_caption">
+          <a href="{{ paper.manubot.url }}">
+            <i class="fas fa-scroll fa-sm"></i
+            >{{ paper.manubot.title }}
+          </a>
+        </div>
+      </div>
       {% endif %}{% endfor %}
     </div>
   </div>
