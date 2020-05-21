@@ -27,6 +27,12 @@
   width: 360px;
   height: 270px;
 }
+@media (max-width: 720px) {
+  .feature_tile {
+    width: 280px;
+    height: 210px;
+  }
+}
 
 /* -------------------------------------------------- */
 /* made with manubot section */
