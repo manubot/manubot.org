@@ -3,8 +3,10 @@
   <style>
     .letter {
       animation: draw_letters 1s ease forwards;
+      stroke-dasharray: 923;
     }
     .bracket {
+      stroke-dasharray: 564;
       animation: draw_brackets 1s ease forwards;
     }
     .line {
@@ -15,36 +17,29 @@
     }
     @keyframes draw_letters {
       from {
-        stroke-dasharray: 923;
         stroke-dashoffset: 923;
       }
       to {
-        stroke-dasharray: 923;
         stroke-dashoffset: 0;
       }
     }
     @keyframes draw_brackets {
       from {
-        stroke-dasharray: 564;
         stroke-dashoffset: 564;
       }
       to {
-        stroke-dasharray: 564;
         stroke-dashoffset: 0;
       }
     }
     @keyframes draw_lines {
       0% {
-        stroke-dasharray: 40;
-        stroke-dashoffset: 40;
+        stroke-width: 0;
       }
       50% {
-        stroke-dasharray: 40;
-        stroke-dashoffset: 40;
+        stroke-width: 0;
       }
       100% {
-        stroke-dasharray: 40;
-        stroke-dashoffset: 0;
+        stroke-width: 50px;
       }
     }
     @keyframes draw_circles {

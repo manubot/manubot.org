@@ -199,9 +199,6 @@ footer {
 .col_text:not(:last-child) {
   padding-right: 20px;
 }
-.col_image img {
-  max-width: 360px;
-}
 @media (max-width: 720px) {
   .col_text {
     flex-basis: 100%;
@@ -219,7 +216,8 @@ footer {
 .logo {
   width: 80px;
 }
-.logo[src='logo.svg'] {
+.logo[src='logo.svg'],
+.logo[data='logo.svg'] {
   width: 175px;
 }
 .cursor_blink {
