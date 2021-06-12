@@ -1,6 +1,6 @@
 # manubot.org webpage source code
 
-[![Build Status](https://travis-ci.com/manubot/manubot.org.svg?branch=master)](https://travis-ci.com/manubot/manubot.org)
+[![GitHub Actions Build Status](https://img.shields.io/github/workflow/status/manubot/manubot.org/Build%20manubot.org/main?label=actions&logo=github&style=for-the-badge)](https://github.com/manubot/manubot.org/actions)
 
 ## Acknowledgements
 
