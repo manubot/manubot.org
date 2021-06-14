@@ -2,10 +2,9 @@ name: Build manubot.org
 on:
   push:
   pull_request:
-  schedule:
-    # At 03:45 on Saturday https://crontab.guru/#45_3_*_*_6
-    # One hour after manubot/catalog cron job.
-    - cron: "45 3 * * 6"
+  repository_dispatch:
+    types:
+      - catalog-update
 jobs:
   build:
     runs-on: ubuntu-latest
